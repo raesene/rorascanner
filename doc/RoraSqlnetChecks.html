@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Module: RoraSqlnetChecks</title>
+
+	<link rel="stylesheet" href="./rdoc.css" type="text/css" media="screen" />
+
+	<script src="./js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="module">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="./rora_sqlnet_checks_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="rora_sqlnet_checks.rb">rora_sqlnet_checks.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-i-sql_excluded_node_check">#sql_excluded_node_check</a></li>
+					
+					<li><a href="#method-i-sql_expire_time_check">#sql_expire_time_check</a></li>
+					
+					<li><a href="#method-i-sql_inbound_connection_timeout_check">#sql_inbound_connection_timeout_check</a></li>
+					
+					<li><a href="#method-i-sql_invited_node_check">#sql_invited_node_check</a></li>
+					
+					<li><a href="#method-i-sql_valid_node_check">#sql_valid_node_check</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="./images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="./RoraFilePermissionsChecks.html">RoraFilePermissionsChecks</a></li>
+				
+					<li><a href="./RoraFileScanner.html">RoraFileScanner</a></li>
+				
+					<li><a href="./RoraListenerChecks.html">RoraListenerChecks</a></li>
+				
+					<li><a href="./RoraPatchLevelChecks.html">RoraPatchLevelChecks</a></li>
+				
+					<li><a href="./RoraReporter.html">RoraReporter</a></li>
+				
+					<li><a href="./RoraScanner.html">RoraScanner</a></li>
+				
+					<li><a href="./RoraSqlnetChecks.html">RoraSqlnetChecks</a></li>
+				
+					<li><a href="./RoraTnsnamesChecks.html">RoraTnsnamesChecks</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="module">RoraSqlnetChecks</h1>
+
+		<div id="description">
+			<pre>
+ Copyright (C) 2011  Rory McCune
+</pre>
+<h1>License</h1>
+<p>
+This program is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the Free
+Software Foundation; either version 2 of the License, or (at your option)
+any later version.
+</p>
+<p>
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+more details.
+</p>
+<p>
+You should have received a copy of the GNU General Public License along
+with this program; if not, write to the Free Software Foundation, Inc., 51
+Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+</p>
+<h1>Template Variables for Scan Modules</h1>
+<pre>
+ each module should be named &lt;descriptive&gt;_scan
+ and have the following variables set for reporting
+ * _source
+ * _description
+ * _sql
+ * _implications
+ * _banner
+ * _vuln_class
+ * _version
+ * _column_names
+ * _results</pre>
+
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="sql-excluded-node-check-method" class="method-detail ">
+				<a name="method-i-sql_excluded_node_check"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">sql_excluded_node_check</span><span
+						class="method-args">(inputArray)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Checks if tcp.excluded_nodes is setup.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="sql-excluded-node-check-source">
+<pre>
+     <span class="ruby-comment cmt"># File rora_sqlnet_checks.rb, line 118</span>
+118:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sql_excluded_node_check</span>(<span class="ruby-identifier">inputArray</span>)
+119:     <span class="ruby-ivar">@sql_excluded_node_check_source</span> = <span class="ruby-value str">'CIS 4.24'</span>
+120:     <span class="ruby-ivar">@sql_excluded_node_check_description</span> = <span class="ruby-value str">'TBC'</span>
+121:     <span class="ruby-ivar">@sql_excluded_node_check_sql</span> = <span class="ruby-value str">'NA'</span>
+122:     <span class="ruby-ivar">@sql_excluded_node_check_implications</span> = <span class="ruby-value str">'TBC'</span>
+123:     <span class="ruby-ivar">@sql_excluded_node_check_banner</span> = <span class="ruby-value str">'Valid Node Checking'</span>
+124:     <span class="ruby-ivar">@sql_excluded_node_check_vuln_class</span> = <span class="ruby-value str">'sqlnet configuration'</span>
+125:     <span class="ruby-ivar">@sql_excluded_node_check_version</span> = <span class="ruby-value str">'ALL'</span>
+126:     <span class="ruby-ivar">@sql_excluded_node_check_column_names</span> = <span class="ruby-node">]parameter value]</span>
+127:     <span class="ruby-ivar">@sql_excluded_node_check_results</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+128:     <span class="ruby-identifier">tcpexcludednode</span> = <span class="ruby-value str">''</span>
+129:     <span class="ruby-identifier">inputArray</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+130:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/tcp.excluded_nodes/</span>
+131:         <span class="ruby-identifier">tcpexcludednode</span> = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">'='</span>)[<span class="ruby-value">1</span>].<span class="ruby-identifier">downcase</span>.<span class="ruby-identifier">lstrip</span>.<span class="ruby-identifier">chomp</span>
+132:       <span class="ruby-keyword kw">end</span>
+133:     <span class="ruby-keyword kw">end</span>
+134:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">tcpexcludednode</span> <span class="ruby-operator">==</span> <span class="ruby-value str">''</span>
+135:       <span class="ruby-ivar">@sql_excluded_node_check_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-value str">'tcp.excluded_nodes'</span>, <span class="ruby-value str">'NOT SET'</span>]
+136:       <span class="ruby-ivar">@completed_checks</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'sql_excluded_node_check'</span>
+137:     <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">tcpexcludednode</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'false'</span>
+138:       <span class="ruby-ivar">@sql_excluded_node_check_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-value str">'tcp.excluded_nodes'</span>, <span class="ruby-value str">'FALSE'</span>]
+139:       <span class="ruby-ivar">@completed_checks</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'sql_excluded_node_check'</span>
+140:     <span class="ruby-keyword kw">end</span>
+141:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="sql-expire-time-check-method" class="method-detail ">
+				<a name="method-i-sql_expire_time_check"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">sql_expire_time_check</span><span
+						class="method-args">(inputArray)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Checks if sqlnet.expire_time is set
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="sql-expire-time-check-source">
+<pre>
+     <span class="ruby-comment cmt"># File rora_sqlnet_checks.rb, line 144</span>
+144:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sql_expire_time_check</span>(<span class="ruby-identifier">inputArray</span>)
+145:     <span class="ruby-ivar">@sql_expire_time_check_source</span> = <span class="ruby-value str">'CIS 4.26'</span>
+146:     <span class="ruby-ivar">@sql_expire_time_check_description</span> = <span class="ruby-value str">'The suggestion is that this should be set to 10'</span>
+147:     <span class="ruby-ivar">@sql_expire_time_check_sql</span> = <span class="ruby-value str">'N/A'</span>
+148:     <span class="ruby-ivar">@sql_expire_time_check_implications</span> = <span class="ruby-value str">'TBC'</span>
+149:     <span class="ruby-ivar">@sql_expire_time_check_banner</span> = <span class="ruby-value str">'Expire Time'</span>
+150:     <span class="ruby-ivar">@sql_expire_time_check_vuln_class</span> = <span class="ruby-value str">'sqlnet configuration'</span>
+151:     <span class="ruby-ivar">@sql_expire_time_check_version</span> = <span class="ruby-value str">'All'</span>
+152:     <span class="ruby-ivar">@sql_expire_time_check_column_names</span> = <span class="ruby-node">]parameter current_value]</span>
+153:     <span class="ruby-ivar">@sql_expire_time_check_results</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+154:     <span class="ruby-identifier">expire_time</span> = <span class="ruby-value">99999</span>
+155:     <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">info</span>(<span class="ruby-value str">&quot;Started sql expire time check&quot;</span>)
+156:     <span class="ruby-identifier">inputArray</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+157:      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^sqlnet\.expire_time/</span>
+158:        <span class="ruby-identifier">expire_time</span> = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">'='</span>)[<span class="ruby-value">1</span>].<span class="ruby-identifier">lstrip</span>.<span class="ruby-identifier">rstrip</span>.<span class="ruby-identifier">chomp</span>
+159:      <span class="ruby-keyword kw">end</span>
+160:     <span class="ruby-keyword kw">end</span>
+161:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">expire_time</span> <span class="ruby-operator">==</span> <span class="ruby-value">99999</span>
+162:       <span class="ruby-ivar">@sql_expire_time_check_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-value str">'sqlnet.expire_time'</span>, <span class="ruby-value str">'NOT SET'</span>]
+163:       <span class="ruby-ivar">@completed_checks</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'sql_expire_time_check'</span>
+164:     <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">expire_time</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">10</span>
+165:       <span class="ruby-ivar">@sql_expire_time_check_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-value str">'sqlnet.expire_time'</span>, <span class="ruby-identifier">expire_time</span>]
+166:       <span class="ruby-ivar">@completed_checks</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'sql_expire_time_check'</span>
+167:     <span class="ruby-keyword kw">end</span> 
+168:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="sql-inbound-connection-timeout-check-method" class="method-detail ">
+				<a name="method-i-sql_inbound_connection_timeout_check"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">sql_inbound_connection_timeout_check</span><span
+						class="method-args">(inputArray)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Checks the sqlnet.inbound_connect_timeout parameter
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="sql-inbound-connection-timeout-check-source">
+<pre>
+    <span class="ruby-comment cmt"># File rora_sqlnet_checks.rb, line 39</span>
+39:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sql_inbound_connection_timeout_check</span>(<span class="ruby-identifier">inputArray</span>)
+40:     <span class="ruby-ivar">@sql_inbound_connection_timeout_check_source</span> = <span class="ruby-value str">'CIS 4.25'</span>
+41:     <span class="ruby-ivar">@sql_inbound_connection_timeout_check_description</span> = <span class="ruby-value str">'The suggestion is to set this parameter to a low initial value (3) and then increase if necessary'</span>
+42:     <span class="ruby-ivar">@sql_inbound_connection_timeout_check_sql</span> = <span class="ruby-value str">'N/A'</span>
+43:     <span class="ruby-ivar">@sql_inbound_connection_timeout_check_implications</span> = <span class="ruby-value str">'Not setting this parameter may allow for a Denial of service on the database by starting connections to the database but not completing them'</span>
+44:     <span class="ruby-ivar">@sql_inbound_connection_timeout_check_banner</span> = <span class="ruby-value str">'Inbound Connection Timeout'</span>
+45:     <span class="ruby-ivar">@sql_inbound_connection_timeout_check_vuln_class</span> = <span class="ruby-value str">'sqlnet configuration'</span>
+46:     <span class="ruby-ivar">@sql_inbound_connection_timeout_check_version</span> = <span class="ruby-value str">'All'</span>
+47:     <span class="ruby-ivar">@sql_inbound_connection_timeout_check_column_names</span> = <span class="ruby-node">]parameter current_value]</span>
+48:     <span class="ruby-ivar">@sql_inbound_connection_timeout_check_results</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+49:     <span class="ruby-identifier">connect_timeout</span> = <span class="ruby-value">99999</span>
+50:     <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">info</span>(<span class="ruby-value str">&quot;Started sql inbound connection timeout check&quot;</span>)
+51:     <span class="ruby-identifier">inputArray</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+52:      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^sqlnet\.inbound_connect_timeout/</span>
+53:        <span class="ruby-identifier">connect_timeout</span> = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">'='</span>)[<span class="ruby-value">1</span>].<span class="ruby-identifier">lstrip</span>.<span class="ruby-identifier">rstrip</span>.<span class="ruby-identifier">chomp</span>
+54:      <span class="ruby-keyword kw">end</span>
+55:     <span class="ruby-keyword kw">end</span>
+56:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">connect_timeout</span> <span class="ruby-operator">==</span> <span class="ruby-value">99999</span>
+57:       <span class="ruby-ivar">@sql_inbound_connection_timeout_check_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-value str">'sqlnet.inbound_connect_timeout'</span>, <span class="ruby-value str">'NOT SET'</span>]
+58:       <span class="ruby-ivar">@completed_checks</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'sql_inbound_connection_timeout_check'</span>
+59:     <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">connect_timeout</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">3</span>
+60:       <span class="ruby-ivar">@sql_inbound_connection_timeout_check_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-value str">'sqlnet.inbound_connect_timeout'</span>, <span class="ruby-identifier">connect_timeout</span>]
+61:       <span class="ruby-ivar">@completed_checks</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'sql_inbound_connection_timeout_check'</span>
+62:     <span class="ruby-keyword kw">end</span> 
+63:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="sql-invited-node-check-method" class="method-detail ">
+				<a name="method-i-sql_invited_node_check"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">sql_invited_node_check</span><span
+						class="method-args">(inputArray)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Checks if tcp.invited_nodes is setup
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="sql-invited-node-check-source">
+<pre>
+     <span class="ruby-comment cmt"># File rora_sqlnet_checks.rb, line 92</span>
+ 92:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sql_invited_node_check</span>(<span class="ruby-identifier">inputArray</span>)
+ 93:     <span class="ruby-ivar">@sql_invited_node_check_source</span> = <span class="ruby-value str">'CIS 4.23'</span>
+ 94:     <span class="ruby-ivar">@sql_invited_node_check_description</span> = <span class="ruby-value str">'TBC'</span>
+ 95:     <span class="ruby-ivar">@sql_invited_node_check_sql</span> = <span class="ruby-value str">'NA'</span>
+ 96:     <span class="ruby-ivar">@sql_invited_node_check_implications</span> = <span class="ruby-value str">'TBC'</span>
+ 97:     <span class="ruby-ivar">@sql_invited_node_check_banner</span> = <span class="ruby-value str">'Valid Node Checking'</span>
+ 98:     <span class="ruby-ivar">@sql_invited_node_check_vuln_class</span> = <span class="ruby-value str">'sqlnet configuration'</span>
+ 99:     <span class="ruby-ivar">@sql_invited_node_check_version</span> = <span class="ruby-value str">'ALL'</span>
+100:     <span class="ruby-ivar">@sql_invited_node_check_column_names</span> = <span class="ruby-node">]parameter value]</span>
+101:     <span class="ruby-ivar">@sql_invited_node_check_results</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+102:     <span class="ruby-identifier">tcpinvitednode</span> = <span class="ruby-value str">''</span>
+103:     <span class="ruby-identifier">inputArray</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+104:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/tcp.invited_nodes/</span>
+105:         <span class="ruby-identifier">tcpinvitednode</span> = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">'='</span>)[<span class="ruby-value">1</span>].<span class="ruby-identifier">downcase</span>.<span class="ruby-identifier">lstrip</span>.<span class="ruby-identifier">chomp</span>
+106:       <span class="ruby-keyword kw">end</span>
+107:     <span class="ruby-keyword kw">end</span>
+108:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">tcpinvitednode</span> <span class="ruby-operator">==</span> <span class="ruby-value str">''</span>
+109:       <span class="ruby-ivar">@sql_invited_node_check_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-value str">'tcp.invited_nodes'</span>, <span class="ruby-value str">'NOT SET'</span>]
+110:       <span class="ruby-ivar">@completed_checks</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'sql_invited_node_check'</span>
+111:     <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">tcpinvitednode</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'false'</span>
+112:       <span class="ruby-ivar">@sql_invited_node_check_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-value str">'tcp.invited_nodes'</span>, <span class="ruby-value str">'FALSE'</span>]
+113:       <span class="ruby-ivar">@completed_checks</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'sql_invited_node_check'</span>
+114:     <span class="ruby-keyword kw">end</span>
+115:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="sql-valid-node-check-method" class="method-detail ">
+				<a name="method-i-sql_valid_node_check"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">sql_valid_node_check</span><span
+						class="method-args">(inputArray)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Check if tcp.validnode_checking is enabled in the file
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="sql-valid-node-check-source">
+<pre>
+    <span class="ruby-comment cmt"># File rora_sqlnet_checks.rb, line 66</span>
+66:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sql_valid_node_check</span>(<span class="ruby-identifier">inputArray</span>)
+67:     <span class="ruby-ivar">@sql_valid_node_check_source</span> = <span class="ruby-value str">'CIS 4.22'</span>
+68:     <span class="ruby-ivar">@sql_valid_node_check_description</span> = <span class="ruby-value str">'TBC'</span>
+69:     <span class="ruby-ivar">@sql_valid_node_check_sql</span> = <span class="ruby-value str">'NA'</span>
+70:     <span class="ruby-ivar">@sql_valid_node_check_implications</span> = <span class="ruby-value str">'TBC'</span>
+71:     <span class="ruby-ivar">@sql_valid_node_check_banner</span> = <span class="ruby-value str">'Valid Node Checking'</span>
+72:     <span class="ruby-ivar">@sql_valid_node_check_vuln_class</span> = <span class="ruby-value str">'sqlnet configuration'</span>
+73:     <span class="ruby-ivar">@sql_valid_node_check_version</span> = <span class="ruby-value str">'ALL'</span>
+74:     <span class="ruby-ivar">@sql_valid_node_check_column_names</span> = <span class="ruby-node">]parameter value]</span>
+75:     <span class="ruby-ivar">@sql_valid_node_check_results</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+76:     <span class="ruby-identifier">tcpvalidnode</span> = <span class="ruby-value str">''</span>
+77:     <span class="ruby-identifier">inputArray</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+78:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/tcp.validnode_checking/</span>
+79:         <span class="ruby-identifier">tcpvalidnode</span> = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">'='</span>)[<span class="ruby-value">1</span>].<span class="ruby-identifier">downcase</span>.<span class="ruby-identifier">lstrip</span>.<span class="ruby-identifier">chomp</span>
+80:       <span class="ruby-keyword kw">end</span>
+81:     <span class="ruby-keyword kw">end</span>
+82:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">tcpvalidnode</span> <span class="ruby-operator">==</span> <span class="ruby-value str">''</span>
+83:       <span class="ruby-ivar">@sql_valid_node_check_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-value str">'tcp.validnode_checking'</span>, <span class="ruby-value str">'NOT SET'</span>]
+84:       <span class="ruby-ivar">@completed_checks</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'sql_valid_node_check'</span>
+85:     <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">tcpvalidnode</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'false'</span>
+86:       <span class="ruby-ivar">@sql_valid_node_check_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-value str">'tcp.validnode_checking'</span>, <span class="ruby-value str">'FALSE'</span>]
+87:       <span class="ruby-ivar">@completed_checks</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'sql_valid_node_check'</span>
+88:     <span class="ruby-keyword kw">end</span>
+89:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

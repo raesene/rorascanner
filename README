@@ -1,0 +1,126 @@
+RoraScanner README & INSTALLATION
+
+By Rory McCune - raesene@gmail.com
+=================================
+
+RoraScanner is an Oracle security scanner which I started writing as part of my SANS GSOC Gold submission in 2007, and I'm dusting off now.
+
+At the moment it's pretty basic with only a couple of checks implemented, but the intention is to improve this over time.  If there's any checks you'd like to see added
+please just drop me a mail and I'll see what I can do.
+
+RoraScanner is currently alpha level code, please don't run this on your production Oracle environment it's a bad idea (tm).  However please do run it on 
+test environments and let me know how you get on :)
+
+
+LICENSE
+=======
+RoraScanner and any supporting code written by me is licenced under the GPLv2.  
+
+There are some supporting tools that can be used by RoraScanner, these tools are (obviously) copyright by their owners and licensed under their terms.
+
+
+
+INSTALLATION
+============
+
+At the moment RoraScanner has only been installed and tested on Linux, most of it should work in windows, but don't be surprised if it doesn't.
+
+
+Install Ruby 
+============
+
+You will need ruby installed to run RoraScanner.  
+
+Linux
+------
+In linux the easiest way to do this will be to use your package manager of choice to install ruby
+
+Yum/RPM based - yum install ruby, yum install rubygems
+apt/dpkg based - apt-get install ruby, apt-get install rubygems
+
+Alternatively, consider using rvm as a great way to get many rubies working (http://rvm.beginrescueend.com/)
+
+Windows
+-------
+
+The easiest way to install ruby on windows, is to use the ruby installer found here (http://rubyinstaller.org/)
+
+
+Install the Oracle Client
+==========================
+
+The oracle client programs can be downloaded and installed from Oracles site here - http://www.oracle.com/technetwork/database/features/instant-client/index-097480.html
+
+
+
+Install Supporting Files
+==============================
+
+Run - "gem install ruport" from a command line to install ruport
+Run - "gem install builder" to install builder
+
+and install the oci8 library from the instructions at http://ruby-oci8.rubyforge.org/en/ .
+
+
+
+Weak Password Checking
+======================
+
+RoraScanner can call checkpwd from Red database security to check for weak passwords.  
+If you want to use this function get the latest version of the checker from 
+http://www.red-database-security.com/software/checkpwd.html 
+Then put the information about the program location and the location of any password lists you'd like to use into scanner.conf
+RoraScanner will then call checkpwd for each user in the user list.
+
+
+
+
+USAGE
+=====
+
+there are two executable scripts for RoraScanner.  the first oracle-scanner.rb makes a SQL*NET connection to an Oracle database and completes various queries
+
+the required parameters are
+
+-u <username>
+-p <password>
+-c <Connection String>
+
+Optional parameters are
+
+-d - Connect as SYSDBA
+-o - Connect as SYSOPER
+
+So an example of connection to a database with a SID of ORCL on a host 192.168.1.161 with a username of SYS (so need SYSDBA) and a password of PASSWORD would be
+
+./oracle-scanner.rb -u SYS -p PASSWORD -c 192.168.1.161/ORCL -d
+
+
+Rora_Scanner_Log is the default log file and should contain information about any errors encountered
+
+=================
+
+oracle-file-scanner.rb is designed to analyse various files to review security related parameters.  At the moment it's got a couple of checks for sqlnet.ora and listener.ora
+as well as the ability to review the file permissions from unix installations of Oracle.
+
+for sqlnet.ora
+
+./oracle-file-scanner.rb -f sqlnet.ora
+
+for listener.ora
+
+./oracle-file-scanner.rb -f listener.ora
+
+for reviewing file permissions on unix First go to the $ORACLE_HOME directory on your database server and run ls -alR > <output-file> then copy the output-file
+to the RoraScanner directory then run
+
+./oracle-file-scanner.rb -f <output-file> -u <oracle-user> -g <oracle-group>
+
+Rora_File_Scanner_Log is the default log file and should contain information about any errors encountered
+
+========
+
+scanner.conf
+============
+
+This is the config file for the scanner.  You can use this to modify the log level or output file or to customise which checks you want to run.

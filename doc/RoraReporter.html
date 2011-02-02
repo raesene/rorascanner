@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Module: RoraReporter</title>
+
+	<link rel="stylesheet" href="./rdoc.css" type="text/css" media="screen" />
+
+	<script src="./js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="module">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="./rora_reporter_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="rora_reporter.rb">rora_reporter.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-i-create_csv_report">#create_csv_report</a></li>
+					
+					<li><a href="#method-i-create_html_report">#create_html_report</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="./images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="./RoraFilePermissionsChecks.html">RoraFilePermissionsChecks</a></li>
+				
+					<li><a href="./RoraFileScanner.html">RoraFileScanner</a></li>
+				
+					<li><a href="./RoraListenerChecks.html">RoraListenerChecks</a></li>
+				
+					<li><a href="./RoraPatchLevelChecks.html">RoraPatchLevelChecks</a></li>
+				
+					<li><a href="./RoraReporter.html">RoraReporter</a></li>
+				
+					<li><a href="./RoraScanner.html">RoraScanner</a></li>
+				
+					<li><a href="./RoraSqlnetChecks.html">RoraSqlnetChecks</a></li>
+				
+					<li><a href="./RoraTnsnamesChecks.html">RoraTnsnamesChecks</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="module">RoraReporter</h1>
+
+		<div id="description">
+			<p>
+Copyright (C) 2011  Rory McCune
+</p>
+<h1>License</h1>
+<p>
+This program is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the Free
+Software Foundation; either version 2 of the License, or (at your option)
+any later version.
+</p>
+<p>
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+more details.
+</p>
+<p>
+You should have received a copy of the GNU General Public License along
+with this program; if not, write to the Free Software Foundation, Inc., 51
+Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+</p>
+<h1>Overview</h1>
+<p>
+This module adds the two reporting methods (HTML and CSV).  the HTML report
+makes use of builder to create the file The CSV report uses the STDLIB csv
+class.
+</p>
+
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="create-csv-report-method" class="method-detail ">
+				<a name="method-i-create_csv_report"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">create_csv_report</span><span
+						class="method-args">(server,checkType)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Creates CSV report
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="create-csv-report-source">
+<pre>
+     <span class="ruby-comment cmt"># File rora_reporter.rb, line 103</span>
+103: <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">create_csv_report</span>(<span class="ruby-identifier">server</span>,<span class="ruby-identifier">checkType</span>)
+104:   <span class="ruby-identifier">require</span> <span class="ruby-value str">'csv'</span>
+105:   <span class="ruby-identifier">filename</span> = <span class="ruby-identifier">server</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp re">/\//</span>,<span class="ruby-value str">'-'</span>) <span class="ruby-operator">+</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">gmtime</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/\W/</span>,<span class="ruby-value str">''</span>) <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;.csv&quot;</span>
+106:   <span class="ruby-identifier">report</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-value str">&quot;w+&quot;</span>)
+107:   <span class="ruby-identifier">report</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;# CSV report for &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">server</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;created at &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">gmtime</span>.<span class="ruby-identifier">to_s</span>
+108:   
+109:   <span class="ruby-ivar">@completed_checks</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">check</span><span class="ruby-operator">|</span>
+110:     <span class="ruby-identifier">scan_id</span> = <span class="ruby-identifier">eval</span> <span class="ruby-node">%{@#{check}_id}</span>
+111:     <span class="ruby-identifier">banner</span> = <span class="ruby-identifier">eval</span> <span class="ruby-node">%{@#{check}_banner}</span>
+112: 
+113:     <span class="ruby-identifier">report</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;# &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">scan_id</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot; &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">banner</span> 
+114:     <span class="ruby-identifier">header</span> = <span class="ruby-identifier">eval</span> <span class="ruby-node">%{@#{check}_column_names}</span>
+115:     <span class="ruby-identifier">report</span>.<span class="ruby-identifier">puts</span> <span class="ruby-constant">CSV</span>.<span class="ruby-identifier">generate_line</span>(<span class="ruby-identifier">header</span>)
+116:     <span class="ruby-identifier">body</span> = <span class="ruby-identifier">eval</span> <span class="ruby-node">%{@#{check}_results}</span>
+117:     <span class="ruby-identifier">body</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+118:       <span class="ruby-identifier">report</span>.<span class="ruby-identifier">puts</span> <span class="ruby-constant">CSV</span>.<span class="ruby-identifier">generate_line</span>(<span class="ruby-identifier">line</span>)
+119:     <span class="ruby-keyword kw">end</span>
+120:   <span class="ruby-keyword kw">end</span>
+121:   
+122:   
+123:   
+124:  
+125: <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="create-html-report-method" class="method-detail ">
+				<a name="method-i-create_html_report"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">create_html_report</span><span
+						class="method-args">(server,checkType)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Creates an HTML report
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="create-html-report-source">
+<pre>
+     <span class="ruby-comment cmt"># File rora_reporter.rb, line 30</span>
+ 30: <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">create_html_report</span>(<span class="ruby-identifier">server</span>,<span class="ruby-identifier">checkType</span>)
+ 31:   <span class="ruby-identifier">require</span> <span class="ruby-value str">'builder'</span>
+ 32:   <span class="ruby-identifier">require</span> <span class="ruby-value str">'ruport'</span>
+ 33:   <span class="ruby-identifier">require</span> <span class="ruby-value str">'ruport/util'</span>
+ 34:   <span class="ruby-identifier">filename</span> = <span class="ruby-identifier">server</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp re">/\//</span>,<span class="ruby-value str">'-'</span>) <span class="ruby-operator">+</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">gmtime</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/\W/</span>,<span class="ruby-value str">''</span>) <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;.html&quot;</span>
+ 35:   <span class="ruby-identifier">report</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-value str">&quot;w+&quot;</span>)
+ 36:   
+ 37:   
+ 38:   <span class="ruby-identifier">xmlBuild</span> = <span class="ruby-constant">Builder</span><span class="ruby-operator">::</span><span class="ruby-constant">XmlMarkup</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:target</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">report</span>, <span class="ruby-value">:indent</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span> )
+ 39:   
+ 40:   <span class="ruby-identifier">xmlBuild</span>.<span class="ruby-identifier">instruct!</span>
+ 41:   <span class="ruby-identifier">xmlBuild</span>.<span class="ruby-identifier">declare!</span> <span class="ruby-value">:DOCTYPE</span>, <span class="ruby-value">:html</span>, <span class="ruby-value">:PUBLIC</span>, <span class="ruby-value str">&quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot;</span>, <span class="ruby-value str">&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;</span>
+ 42:   
+ 43:   <span class="ruby-identifier">xmlBuild</span>.<span class="ruby-identifier">html</span>( <span class="ruby-value str">&quot;xmlns&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;http://www.w3.org/1999/xhtml&quot;</span> ) { 
+ 44: 
+ 45:     <span class="ruby-identifier">xmlBuild</span>.<span class="ruby-identifier">head</span> { 
+ 46:       <span class="ruby-identifier">xmlBuild</span>.<span class="ruby-identifier">title</span> <span class="ruby-ivar">@title</span> <span class="ruby-operator">+</span> <span class="ruby-value str">'report for '</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">server</span>
+ 47:       <span class="ruby-identifier">xmlBuild</span>.<span class="ruby-identifier">style</span>( <span class="ruby-value str">&quot;type&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;text/css&quot;</span> ) { <span class="ruby-identifier">xmlBuild</span>.<span class="ruby-identifier">text!</span> <span class="ruby-node">&quot;h1 {font-family:tahoma,sans-serif;font-size:18pt;color:blue} body{font-family:georgia,serif} #banner{font-family:georgia,serif;font-size:14pt;color:green} table{background-color: #999; border: 1px solid black;} th {color: white; background-color: #333; } td {background-color: #ccc; border: 1px solid black;} .hidden { display:none; } .unhidden { display:block; }&quot;</span> 
+ 48:       }
+ 49:       <span class="ruby-identifier">xmlBuild</span>.<span class="ruby-identifier">script</span>( <span class="ruby-value str">&quot;type&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;text/javascript&quot;</span>) {<span class="ruby-identifier">xmlBuild</span>.<span class="ruby-identifier">text!</span> <span class="ruby-value str">&quot;
+ 50:        function unhide(divID) {
+ 51:          var item = document.getElementById(divID);
+ 52:          if (item) {
+ 53:            item.className=(item.className=='hidden')?'unhidden':'hidden';
+ 54:          }
+ 55:        }&quot;</span> 
+ 56:       }
+ 57:     } 
+ 58:     
+ 59:     <span class="ruby-identifier">xmlBuild</span>.<span class="ruby-identifier">body</span> {
+ 60:       <span class="ruby-identifier">xmlBuild</span>.<span class="ruby-identifier">h1</span> <span class="ruby-ivar">@title</span> <span class="ruby-operator">+</span> <span class="ruby-value str">' report for '</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">server</span> <span class="ruby-operator">+</span> <span class="ruby-value str">'- Created on '</span> <span class="ruby-operator">+</span> <span class="ruby-constant">DateTime</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">to_s</span>
+ 61:       <span class="ruby-ivar">@completed_checks</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">check</span><span class="ruby-operator">|</span>
+ 62:         <span class="ruby-identifier">table_results</span> = <span class="ruby-identifier">eval</span> <span class="ruby-node">%{@#{check}_results}</span>
+ 63:         <span class="ruby-identifier">source</span> = <span class="ruby-identifier">eval</span> <span class="ruby-node">%{@#{check}_source}</span>
+ 64:         <span class="ruby-identifier">description</span> = <span class="ruby-identifier">eval</span> <span class="ruby-node">%{@#{check}_description}</span>
+ 65:         <span class="ruby-identifier">sql</span> = <span class="ruby-identifier">eval</span> <span class="ruby-node">%{@#{check}_sql}</span>
+ 66:         <span class="ruby-identifier">implications</span> = <span class="ruby-identifier">eval</span> <span class="ruby-node">%{@#{check}_implications}</span>
+ 67:         <span class="ruby-identifier">banner</span> = <span class="ruby-identifier">eval</span> <span class="ruby-node">%{@#{check}_banner}</span>
+ 68:         <span class="ruby-identifier">vuln_class</span> = <span class="ruby-identifier">eval</span> <span class="ruby-node">%{@#{check}_vuln_class}</span>
+ 69:         <span class="ruby-identifier">version</span> = <span class="ruby-identifier">eval</span> <span class="ruby-node">%{@#{check}_version}</span>
+ 70:         <span class="ruby-identifier">column_names</span> = <span class="ruby-identifier">eval</span> <span class="ruby-node">%{@#{check}_column_names}</span>
+ 71:         <span class="ruby-identifier">table</span> = <span class="ruby-constant">Ruport</span><span class="ruby-operator">::</span><span class="ruby-constant">Data</span><span class="ruby-operator">::</span><span class="ruby-constant">Table</span>.<span class="ruby-identifier">new</span> <span class="ruby-value">:data</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">table_results</span>, <span class="ruby-value">:column_names</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">column_names</span>
+ 72:         <span class="ruby-identifier">xmlBuild</span>.<span class="ruby-identifier">br</span>
+ 73:         <span class="ruby-identifier">xmlBuild</span>.<span class="ruby-identifier">p</span>(<span class="ruby-value">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;banner&quot;</span>) {
+ 74:           <span class="ruby-identifier">xmlBuild</span>.<span class="ruby-identifier">a</span>(<span class="ruby-identifier">banner</span>, <span class="ruby-value str">&quot;href&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-node">&quot;javascript:unhide('#{check}')&quot;</span>)
+ 75:        }
+ 76:         <span class="ruby-identifier">xmlBuild</span>.<span class="ruby-identifier">div</span>(<span class="ruby-value">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">check</span>, <span class="ruby-value">:class</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;hidden&quot;</span>) {
+ 77:         <span class="ruby-identifier">xmlBuild</span>.<span class="ruby-identifier">p</span> {
+ 78:           <span class="ruby-identifier">xmlBuild</span>.<span class="ruby-identifier">b</span> <span class="ruby-value str">&quot;Check Source&quot;</span> 
+ 79:           <span class="ruby-identifier">xmlBuild</span>.<span class="ruby-identifier">text!</span> <span class="ruby-value str">&quot; : &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">source</span>
+ 80:         }
+ 81:         <span class="ruby-identifier">xmlBuild</span>.<span class="ruby-identifier">p</span> { 
+ 82:           <span class="ruby-identifier">xmlBuild</span>.<span class="ruby-identifier">b</span> <span class="ruby-value str">&quot;Vulnerability Class&quot;</span>
+ 83:           <span class="ruby-identifier">xmlBuild</span>.<span class="ruby-identifier">text!</span> <span class="ruby-value str">&quot; : &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">vuln_class</span>
+ 84:         } 
+ 85:         <span class="ruby-identifier">xmlBuild</span>.<span class="ruby-identifier">p</span> {
+ 86:           <span class="ruby-identifier">xmlBuild</span>.<span class="ruby-identifier">b</span> <span class="ruby-value str">&quot;Check Description&quot;</span>
+ 87:           <span class="ruby-identifier">xmlBuild</span>.<span class="ruby-identifier">text!</span> <span class="ruby-value str">&quot; : &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">description</span>
+ 88:         }
+ 89:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">implications</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>
+ 90:           <span class="ruby-identifier">xmlBuild</span>.<span class="ruby-identifier">p</span> {
+ 91:             <span class="ruby-identifier">xmlBuild</span>.<span class="ruby-identifier">b</span> <span class="ruby-value str">&quot;Check Implications&quot;</span>
+ 92:             <span class="ruby-identifier">xmlBuild</span>.<span class="ruby-identifier">text!</span> <span class="ruby-value str">&quot; : &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">implications</span>
+ 93:           }
+ 94:         <span class="ruby-keyword kw">end</span>
+ 95:         <span class="ruby-identifier">report</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">table</span>.<span class="ruby-identifier">to_html</span>
+ 96:         }
+ 97:       <span class="ruby-keyword kw">end</span>
+ 98:     }
+ 99:   }
+100: <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Module: RoraFilePermissionsChecks</title>
+
+	<link rel="stylesheet" href="./rdoc.css" type="text/css" media="screen" />
+
+	<script src="./js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="module">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="./rora_file_permissions_checks_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="rora_file_permissions_checks.rb">rora_file_permissions_checks.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-i-parse_unix_rights">#parse_unix_rights</a></li>
+					
+					<li><a href="#method-i-parse_windows_rights">#parse_windows_rights</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="./images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="./RoraFilePermissionsChecks.html">RoraFilePermissionsChecks</a></li>
+				
+					<li><a href="./RoraFileScanner.html">RoraFileScanner</a></li>
+				
+					<li><a href="./RoraListenerChecks.html">RoraListenerChecks</a></li>
+				
+					<li><a href="./RoraPatchLevelChecks.html">RoraPatchLevelChecks</a></li>
+				
+					<li><a href="./RoraReporter.html">RoraReporter</a></li>
+				
+					<li><a href="./RoraScanner.html">RoraScanner</a></li>
+				
+					<li><a href="./RoraSqlnetChecks.html">RoraSqlnetChecks</a></li>
+				
+					<li><a href="./RoraTnsnamesChecks.html">RoraTnsnamesChecks</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="module">RoraFilePermissionsChecks</h1>
+
+		<div id="description">
+			<p>
+Copyright (C) 2011  Rory McCune
+</p>
+<h1>License</h1>
+<p>
+This program is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the Free
+Software Foundation; either version 2 of the License, or (at your option)
+any later version.
+</p>
+<p>
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+more details.
+</p>
+<p>
+You should have received a copy of the GNU General Public License along
+with this program; if not, write to the Free Software Foundation, Inc., 51
+Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA. TODO: See if
+there are better ways to review these permissions (eg, PowerShell on
+windows)
+</p>
+
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="parse-unix-rights-method" class="method-detail ">
+				<a name="method-i-parse_unix_rights"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">parse_unix_rights</span><span
+						class="method-args">(inputArray,user,group)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Reviews the ownership of files in the oracle directory
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="parse-unix-rights-source">
+<pre>
+    <span class="ruby-comment cmt"># File rora_file_permissions_checks.rb, line 46</span>
+46:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parse_unix_rights</span>(<span class="ruby-identifier">inputArray</span>,<span class="ruby-identifier">user</span>,<span class="ruby-identifier">group</span>)
+47:     <span class="ruby-ivar">@unix_file_rights_source</span> = <span class="ruby-value str">'CIS 3.01 3.02 3.03, SCORE 1.01.01'</span>
+48:     <span class="ruby-ivar">@unix_file_rights_description</span> = <span class="ruby-value str">'This plugin is designed to review the rights of files in the Oracle installation looking for instances where the owner is incorrectly set or users outside the dba group have access to Oracle files'</span>
+49:     <span class="ruby-ivar">@unix_file_rights_sql</span> = <span class="ruby-value str">'N/A'</span>
+50:     <span class="ruby-ivar">@unix_file_rights_implications</span> = <span class="ruby-value str">'Rights to key Oracle files and directories should not be assigned to users outside the dba group as this allows anyone with a valid account on the system to get access to them.'</span>
+51:     <span class="ruby-ivar">@unix_file_rights_banner</span> = <span class="ruby-value str">'Unix File Rights'</span>
+52:     <span class="ruby-ivar">@unix_file_rights_vuln_class</span> = <span class="ruby-value str">'File Permissions'</span>
+53:     <span class="ruby-ivar">@unix_file_rights_version</span> = <span class="ruby-value str">'All'</span>
+54:     <span class="ruby-ivar">@unix_file_rights_column_names</span> = <span class="ruby-node">]Path Permissions user group]</span>
+55:     <span class="ruby-ivar">@unix_file_rights_results</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+56:     <span class="ruby-identifier">currentDirectory</span> = <span class="ruby-value str">'.'</span>
+57:     <span class="ruby-identifier">inputArray</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+58:       <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">line</span>
+59:       
+60:       <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/^\.\//</span>
+61:         <span class="ruby-identifier">currentDirectory</span> = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">chomp</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp re">/\:$/</span>,<span class="ruby-value str">''</span>)
+62:       <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/^[a-zA-Z\-]{10}/</span>
+63:         <span class="ruby-identifier">fileArray</span> = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">' '</span>)
+64:         <span class="ruby-identifier">rights</span> = <span class="ruby-identifier">fileArray</span>[<span class="ruby-value">0</span>]
+65:         <span class="ruby-identifier">fileUser</span> = <span class="ruby-identifier">fileArray</span>[<span class="ruby-value">2</span>]
+66:         <span class="ruby-identifier">fileGroup</span> = <span class="ruby-identifier">fileArray</span>[<span class="ruby-value">3</span>]
+67:         <span class="ruby-identifier">file</span> = <span class="ruby-identifier">fileArray</span>[<span class="ruby-value">8</span>]
+68:         
+69:         <span class="ruby-comment cmt">#Eliminate the . and .. entries as they're not relevant and also eliminate links as they always have 777 permissions</span>
+70:         <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">file</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'.'</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">file</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'..'</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">rights</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^l/</span>
+71:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">currentDirectory</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'./bin'</span>
+72:             <span class="ruby-comment cmt">#Alert on entries where the user or group don't equal the one passed or the &quot;other&quot; rights allow for writing to a file</span>
+73:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">fileUser</span>.<span class="ruby-identifier">upcase</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">upcase</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">fileGroup</span>.<span class="ruby-identifier">upcase</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">group</span>.<span class="ruby-identifier">upcase</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">rights</span>.<span class="ruby-identifier">slice</span>(<span class="ruby-value">7</span><span class="ruby-operator">..</span><span class="ruby-value">9</span>) <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/w/</span>
+74:               <span class="ruby-ivar">@unix_file_rights_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">currentDirectory</span> <span class="ruby-operator">+</span> <span class="ruby-value str">'/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">file</span>, <span class="ruby-identifier">rights</span>, <span class="ruby-identifier">fileUser</span>, <span class="ruby-identifier">fileGroup</span>]
+75:             <span class="ruby-keyword kw">end</span>
+76:           <span class="ruby-keyword kw">else</span>
+77:             <span class="ruby-comment cmt">#Alert on entries where the user or group don't equal the one passed or the &quot;other&quot; rights aren't 0</span>
+78:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">fileUser</span>.<span class="ruby-identifier">upcase</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">upcase</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">fileGroup</span>.<span class="ruby-identifier">upcase</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">group</span>.<span class="ruby-identifier">upcase</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">rights</span>.<span class="ruby-identifier">slice</span>(<span class="ruby-value">7</span><span class="ruby-operator">..</span><span class="ruby-value">9</span>) <span class="ruby-operator">!=</span> <span class="ruby-value str">'---'</span>
+79:               <span class="ruby-ivar">@unix_file_rights_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">currentDirectory</span> <span class="ruby-operator">+</span> <span class="ruby-value str">'/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">file</span>, <span class="ruby-identifier">rights</span>, <span class="ruby-identifier">fileUser</span>, <span class="ruby-identifier">fileGroup</span>]
+80:             <span class="ruby-keyword kw">end</span>
+81:           <span class="ruby-keyword kw">end</span>
+82:         <span class="ruby-keyword kw">end</span>
+83:           
+84:       <span class="ruby-keyword kw">end</span>
+85:     <span class="ruby-keyword kw">end</span>
+86:   <span class="ruby-ivar">@completed_checks</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'unix_file_rights'</span>
+87:   
+88:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="parse-windows-rights-method" class="method-detail ">
+				<a name="method-i-parse_windows_rights"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">parse_windows_rights</span><span
+						class="method-args">(inputArray)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Reviews a files passed with the rights setup on Oracle windows instances
+reviewing for use of the &#8220;everyone&#8221; group
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="parse-windows-rights-source">
+<pre>
+    <span class="ruby-comment cmt"># File rora_file_permissions_checks.rb, line 23</span>
+23:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parse_windows_rights</span>(<span class="ruby-identifier">inputArray</span>)
+24:     <span class="ruby-ivar">@windows_file_rights_source</span> = <span class="ruby-value str">'Bespoke'</span>
+25:     <span class="ruby-ivar">@windows_file_rights_description</span> = <span class="ruby-value str">'This plugin is designed to review the rights of files in the Oracle installation looking for instances of the Everyone group'</span>
+26:     <span class="ruby-ivar">@windows_file_rights_sql</span> = <span class="ruby-value str">'N/A'</span>
+27:     <span class="ruby-ivar">@windows_file_rights_implications</span> = <span class="ruby-value str">'Rights to key Oracle files and directories should not be assigned to the Everyone group as this allows anyone with a valid account on the system to get access to them.'</span>
+28:     <span class="ruby-ivar">@windows_file_rights_banner</span> = <span class="ruby-value str">'Windows File Rights'</span>
+29:     <span class="ruby-ivar">@windows_file_rights_vuln_class</span> = <span class="ruby-value str">'File Permissions'</span>
+30:     <span class="ruby-ivar">@windows_file_rights_version</span> = <span class="ruby-value str">'All'</span>
+31:     <span class="ruby-ivar">@windows_file_rights_column_names</span> = <span class="ruby-node">]Path Rights]</span>
+32:     <span class="ruby-ivar">@windows_file_rights_results</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+33:     <span class="ruby-identifier">inputArray</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+34:       <span class="ruby-identifier">fileArray</span> = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">','</span>)
+35:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">fileArray</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">fileArray</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">rstrip</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'Everyone'</span>
+36:         <span class="ruby-ivar">@windows_file_rights_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">fileArray</span>[<span class="ruby-value">0</span>],<span class="ruby-identifier">fileArray</span>[<span class="ruby-value">2</span>]]
+37:       <span class="ruby-keyword kw">end</span>
+38:     <span class="ruby-keyword kw">end</span>
+39:   <span class="ruby-ivar">@completed_checks</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'windows_file_rights'</span>
+40:   <span class="ruby-ivar">@title</span> = <span class="ruby-value str">'Windows File Rights'</span>
+41:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

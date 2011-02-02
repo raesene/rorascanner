@@ -1,0 +1,42 @@
+8
+
+dir
+24
+svn+ssh://raesene@rubyforge.org/var/svn/rorascanner/images
+svn+ssh://raesene@rubyforge.org/var/svn/rorascanner
+
+
+
+2008-12-21T21:37:33.261114Z
+24
+raesene
+
+
+svn:special svn:externals svn:needs-lock
+
+bg_btn.gif
+file
+
+
+
+
+2008-04-25T14:45:21.000000Z
+1d46015aa712ff2e651f8e8a1739824b
+2008-12-21T21:37:33.261114Z
+24
+raesene
+has-props
+
+bg_btnOver.gif
+file
+
+
+
+
+2008-04-25T14:45:49.000000Z
+0723ee2f3ef936d9c022aba54dd660cc
+2008-12-21T21:37:33.261114Z
+24
+raesene
+has-props
+

@@ -1,0 +1,1293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: RoraScanner</title>
+
+	<link rel="stylesheet" href="./rdoc.css" type="text/css" media="screen" />
+
+	<script src="./js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="./rora_scanner_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="rora_scanner.rb">rora_scanner.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Object</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-i-audit_priv_profile_scan">#audit_priv_profile_scan</a></li>
+					
+					<li><a href="#method-i-check_pwd">#check_pwd</a></li>
+					
+					<li><a href="#method-i-default_password_scan">#default_password_scan</a></li>
+					
+					<li><a href="#method-i-default_sid_scan">#default_sid_scan</a></li>
+					
+					<li><a href="#method-i-default_tablespace_scan">#default_tablespace_scan</a></li>
+					
+					<li><a href="#method-i-find_version">#find_version</a></li>
+					
+					<li><a href="#method-i-password_profile_scan">#password_profile_scan</a></li>
+					
+					<li><a href="#method-i-sys_privs_rights_scan">#sys_privs_rights_scan</a></li>
+					
+					<li><a href="#method-i-tab_privs_rights_scan">#tab_privs_rights_scan</a></li>
+					
+					<li><a href="#method-i-user_list_scan">#user_list_scan</a></li>
+					
+					<li><a href="#method-i-user_role_privs_scan">#user_role_privs_scan</a></li>
+					
+					<li><a href="#method-i-version_scan">#version_scan</a></li>
+					
+					<li><a href="#method-i-vparameter_scan">#vparameter_scan</a></li>
+					
+					<li><a href="#method-i-weak_password_scan">#weak_password_scan</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+			<div id="includes-section" class="section">
+				<h3 class="section-header">Included Modules</h3>
+				<ul class="link-list">
+				
+				
+					<li><a class="include" href="RoraReporter.html">RoraReporter</a></li>
+				
+				
+				
+					<li><a class="include" href="RoraPatchLevelChecks.html">RoraPatchLevelChecks</a></li>
+				
+				
+				</ul>
+			</div>
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="./images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="./RoraFilePermissionsChecks.html">RoraFilePermissionsChecks</a></li>
+				
+					<li><a href="./RoraFileScanner.html">RoraFileScanner</a></li>
+				
+					<li><a href="./RoraListenerChecks.html">RoraListenerChecks</a></li>
+				
+					<li><a href="./RoraPatchLevelChecks.html">RoraPatchLevelChecks</a></li>
+				
+					<li><a href="./RoraReporter.html">RoraReporter</a></li>
+				
+					<li><a href="./RoraScanner.html">RoraScanner</a></li>
+				
+					<li><a href="./RoraSqlnetChecks.html">RoraSqlnetChecks</a></li>
+				
+					<li><a href="./RoraTnsnamesChecks.html">RoraTnsnamesChecks</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">RoraScanner</h1>
+
+		<div id="description">
+			<p>
+Copyright (C) 2011  Rory McCune
+</p>
+<h1>License</h1>
+<p>
+This program is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the Free
+Software Foundation; either version 2 of the License, or (at your option)
+any later version.
+</p>
+<p>
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+more details.
+</p>
+<p>
+You should have received a copy of the GNU General Public License along
+with this program; if not, write to the Free Software Foundation, Inc., 51
+Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+</p>
+<h1>Overview</h1>
+<p>
+This is the main class for adding scan checks to be carried out over a TNS
+connection.  Each module should follow the pattern below
+</p>
+<h1>Template Variables for Scan Modules</h1>
+<p>
+each module should be named <descriptive>_scan and have the following
+variables set for reporting
+</p>
+<ul>
+<li><p>
+_source
+</p>
+</li>
+<li><p>
+_description
+</p>
+</li>
+<li><p>
+_sql
+</p>
+</li>
+<li><p>
+_implications
+</p>
+</li>
+<li><p>
+_banner
+</p>
+</li>
+<li><p>
+_vuln_class
+</p>
+</li>
+<li><p>
+_version
+</p>
+</li>
+<li><p>
+_column_names
+</p>
+</li>
+<li><p>
+_results
+</p>
+</li>
+</ul>
+
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+		<div id="attribute-method-details" class="method-section section">
+			<h3 class="section-header">Attributes</h3>
+
+			
+			<div id="config-attribute-method" class="method-detail">
+				<a name="config"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">config</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(databaseUser,databasePassword,databaseConnectionString,*privilege)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Starts a new instance of the class, sets up the logging and makes the
+initial connection to the database
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+    <span class="ruby-comment cmt"># File rora_scanner.rb, line 54</span>
+54:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">databaseUser</span>,<span class="ruby-identifier">databasePassword</span>,<span class="ruby-identifier">databaseConnectionString</span>,*<span class="ruby-identifier">privilege</span>)
+55: 
+56:     <span class="ruby-ivar">@config</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-value str">'scanner.conf'</span>,<span class="ruby-value str">'r'</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span> <span class="ruby-constant">YAML</span><span class="ruby-operator">::</span><span class="ruby-identifier">load</span>(<span class="ruby-identifier">file</span>)}
+57:     <span class="ruby-ivar">@scan_log</span> = <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@config</span>[<span class="ruby-value str">'RoraScanner'</span>][<span class="ruby-value str">'log_file'</span>])
+58:     
+59:     <span class="ruby-keyword kw">case</span> <span class="ruby-ivar">@config</span>[<span class="ruby-value str">'RoraScanner'</span>][<span class="ruby-value str">'log_level'</span>]
+60:     <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;DEBUG&quot;</span>
+61:       <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">DEBUG</span>
+62:     <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;INFO&quot;</span>
+63:       <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">INFO</span>
+64:     <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;WARN&quot;</span>
+65:       <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">WARN</span>
+66:     <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;FATAL&quot;</span>
+67:       <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">FATAL</span>
+68:     <span class="ruby-keyword kw">else</span>
+69:       <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">DEBUG</span>
+70:       <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">warn</span>(<span class="ruby-value str">&quot;log level not set correctly using default level of DEBUG&quot;</span>)
+71:     <span class="ruby-keyword kw">end</span>
+72:     
+73:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">privilege</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;sysdba&quot;</span>
+74:       <span class="ruby-ivar">@conn</span> = <span class="ruby-constant">OCI8</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">databaseUser</span>,<span class="ruby-identifier">databasePassword</span>,<span class="ruby-identifier">databaseConnectionString</span>, <span class="ruby-value">:SYSDBA</span>)
+75:       <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;Connected to #{databaseConnectionString} as SYSDBA&quot;</span>)
+76:     <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">privilege</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;sysoper&quot;</span>
+77:       <span class="ruby-ivar">@conn</span> = <span class="ruby-constant">OCI8</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">databaseUser</span>,<span class="ruby-identifier">databasePassword</span>,<span class="ruby-identifier">databaseConnectionString</span>, <span class="ruby-value">:SYSOPER</span>)
+78:       <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;Connected to #{databaseConnectionString} as SYSOPER&quot;</span>)  
+79:     <span class="ruby-keyword kw">else</span> 
+80:       <span class="ruby-ivar">@conn</span> = <span class="ruby-constant">OCI8</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">databaseUser</span>,<span class="ruby-identifier">databasePassword</span>,<span class="ruby-identifier">databaseConnectionString</span>)
+81:       <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;Connected to #{databaseConnectionString} as user&quot;</span>)
+82:       
+83:     <span class="ruby-keyword kw">end</span>
+84:     <span class="ruby-ivar">@completed_checks</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+85:     <span class="ruby-ivar">@title</span> = <span class="ruby-value str">'RoraScanner'</span>
+86:     <span class="ruby-comment cmt">#Assign the connection string to an instance variable to allow for SID checking</span>
+87:     <span class="ruby-ivar">@database_connection_string</span> = <span class="ruby-identifier">databaseConnectionString</span>
+88:   
+89:   <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">OCIError</span>
+90:     <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">fatal</span>(<span class="ruby-node">&quot;Oracle Error Encountered #{$!}&quot;</span>)
+91:     <span class="ruby-identifier">puts</span> <span class="ruby-value str">'Fatal error connection to database - '</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">$!</span>
+92:     <span class="ruby-identifier">puts</span> <span class="ruby-value str">'Check Username, Password and Connection String'</span>
+93:     <span class="ruby-identifier">exit</span>
+94:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="audit-priv-profile-scan-method" class="method-detail ">
+				<a name="method-i-audit_priv_profile_scan"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">audit_priv_profile_scan</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Reviews the audit profile for the database.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="audit-priv-profile-scan-source">
+<pre>
+     <span class="ruby-comment cmt"># File rora_scanner.rb, line 520</span>
+520: <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">audit_priv_profile_scan</span>
+521:   <span class="ruby-ivar">@audit_priv_profile_scan_source</span> = <span class="ruby-value str">'CIS 13.03'</span>
+522:   <span class="ruby-ivar">@audit_priv_profile_scan_id</span> = <span class="ruby-value str">&quot;RS0010&quot;</span>
+523:   <span class="ruby-ivar">@audit_priv_profile_scan_description</span> = <span class="ruby-value str">'This is a comparison of the system privilege audit policy on the database against the requirements of the CIS benchmark.  Review any areas where &quot;NOT SET&quot; is listed initially'</span>
+524:   <span class="ruby-ivar">@audit_priv_profile_scan_sql</span> = <span class="ruby-value str">'select * from dba_priv_audit_opts'</span>
+525:   <span class="ruby-ivar">@audit_priv_profile_scan_implications</span> = <span class="ruby-value str">'where system privileges are not audited it may be possible for a malicious user to make unauthorised modifications to the system'</span>
+526:   <span class="ruby-ivar">@audit_priv_profile_scan_banner</span> = <span class="ruby-value str">'System Privilege Auditing'</span>
+527:   <span class="ruby-ivar">@audit_priv_profile_scan_vuln_class</span> = <span class="ruby-value str">'Auditing'</span>
+528:   <span class="ruby-ivar">@audit_priv_profile_scan_version</span> = <span class="ruby-value str">'ALL'</span>
+529:   <span class="ruby-ivar">@audit_priv_profile_scan_column_names</span> = <span class="ruby-node">]Privilege User Success_audited? Failure_audited?]</span>
+530:   <span class="ruby-ivar">@audit_priv_profile_scan_results</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+531:   <span class="ruby-identifier">priv_audit_results</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+532:   <span class="ruby-ivar">@conn</span>.<span class="ruby-identifier">exec</span>(<span class="ruby-ivar">@audit_priv_profile_scan_sql</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span>
+533:     <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">priv_audit_results</span>[<span class="ruby-identifier">r</span>[<span class="ruby-value">2</span>]]
+534:       <span class="ruby-identifier">priv_audit_results</span>[<span class="ruby-identifier">r</span>[<span class="ruby-value">2</span>]] = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+535:       <span class="ruby-identifier">priv_audit_results</span>[<span class="ruby-identifier">r</span>[<span class="ruby-value">2</span>]] <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">r</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">r</span>[<span class="ruby-value">3</span>], <span class="ruby-identifier">r</span>[<span class="ruby-value">4</span>]]
+536:     <span class="ruby-keyword kw">else</span> 
+537:       <span class="ruby-identifier">priv_audit_results</span>[<span class="ruby-identifier">r</span>[<span class="ruby-value">2</span>]] <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">r</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">r</span>[<span class="ruby-value">3</span>], <span class="ruby-identifier">r</span>[<span class="ruby-value">4</span>]]
+538:     <span class="ruby-keyword kw">end</span>
+539:   <span class="ruby-keyword kw">end</span>
+540: 
+541:   <span class="ruby-identifier">privs_to_audit</span> = [<span class="ruby-value str">'CREATE SESSION'</span>, <span class="ruby-value str">'ALTER ANY TABLE'</span>, <span class="ruby-value str">'ALTER USER'</span>,<span class="ruby-value str">'CREATE ROLE'</span>, <span class="ruby-value str">'CREATE USER'</span>,<span class="ruby-value str">'DROP ANY PROCEDURE'</span>,<span class="ruby-value str">'DROP ANY TABLE'</span>,<span class="ruby-value str">'GRANT ANY PRIVILEGE'</span>,<span class="ruby-value str">'GRANT ANY ROLE'</span>]
+542:   
+543:   <span class="ruby-identifier">privs_to_audit</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">priv</span><span class="ruby-operator">|</span>
+544:     <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">priv_audit_results</span>[<span class="ruby-identifier">priv</span>]
+545:       <span class="ruby-identifier">priv_audit_results</span>[<span class="ruby-identifier">priv</span>] = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+546:       <span class="ruby-identifier">priv_audit_results</span>[<span class="ruby-identifier">priv</span>] <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-value str">' '</span>,<span class="ruby-value str">'NOT SET'</span>,<span class="ruby-value str">'NOT SET'</span>]
+547:     <span class="ruby-keyword kw">end</span>
+548:   <span class="ruby-keyword kw">end</span>
+549:   
+550:   
+551:   <span class="ruby-identifier">priv_audit_results</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+552:     <span class="ruby-identifier">value</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">val</span><span class="ruby-operator">|</span>
+553:       
+554:       <span class="ruby-ivar">@audit_priv_profile_scan_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">key</span>, <span class="ruby-identifier">val</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">val</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">val</span>[<span class="ruby-value">2</span>]]
+555:     <span class="ruby-keyword kw">end</span>
+556:   <span class="ruby-keyword kw">end</span>
+557:   
+558:   <span class="ruby-ivar">@completed_checks</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'audit_priv_profile_scan'</span>
+559:  
+560: <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="check-pwd-method" class="method-detail ">
+				<a name="method-i-check_pwd"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">check_pwd</span><span
+						class="method-args">(username,password)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+TODO : Need to sort this out for windows runs 
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="check-pwd-source">
+<pre>
+     <span class="ruby-comment cmt"># File rora_scanner.rb, line 219</span>
+219:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">check_pwd</span>(<span class="ruby-identifier">username</span>,<span class="ruby-identifier">password</span>)
+220:       <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-ivar">@config</span>[<span class="ruby-value str">'RoraScanner'</span>][<span class="ruby-value str">'checkpwd_location'</span>])
+221:         <span class="ruby-keyword kw">return</span> <span class="ruby-node">%{#{@config['RoraScanner']['checkpwd_location']} -quiet #{username}:#{password} #{@config['RoraScanner']['password_list_location']} }</span>
+222:       <span class="ruby-keyword kw">else</span>
+223:         <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">warn</span>(<span class="ruby-value str">&quot;Couldn't find checkpwd, please confirm that this file is available and in the location specified in scanner.conf&quot;</span>)
+224:         <span class="ruby-keyword kw">return</span> [<span class="ruby-value str">&quot;Error&quot;</span>, <span class="ruby-value str">&quot;Couldn't find checkpwd&quot;</span>]
+225:       <span class="ruby-keyword kw">end</span>
+226:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="default-password-scan-method" class="method-detail ">
+				<a name="method-i-default_password_scan"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">default_password_scan</span><span
+						class="method-args">(password_file)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Reviews the results of the user list scan for known default passwords,
+based on the password file from petefinnigan.com
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="default-password-scan-source">
+<pre>
+     <span class="ruby-comment cmt"># File rora_scanner.rb, line 151</span>
+151:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">default_password_scan</span>(<span class="ruby-identifier">password_file</span>)
+152:     <span class="ruby-ivar">@default_password_scan_source</span> = <span class="ruby-value str">&quot;rorascanner&quot;</span>
+153:     <span class="ruby-ivar">@default_password_scan_id</span> = <span class="ruby-value str">&quot;RS0002&quot;</span>
+154:     <span class="ruby-ivar">@default_password_scan_description</span> = <span class="ruby-value str">&quot;This check provides a list of all the accounts with default passwords still set and the account status.  If these accounts are required the password should be altered away from the default&quot;</span>
+155:     <span class="ruby-ivar">@default_password_scan_sql</span> = <span class="ruby-value str">&quot;&quot;</span>
+156:     <span class="ruby-ivar">@default_password_scan_implications</span> = <span class="ruby-value str">&quot;Where there are accounts with default passwords it may be possible for an attacker to gain unauthorised access to the database using those credentials &quot;</span>
+157:     <span class="ruby-ivar">@default_password_scan_banner</span> = <span class="ruby-value str">&quot;Accounts with Default passwords set&quot;</span>
+158:     <span class="ruby-ivar">@default_password_scan_vuln_class</span> = <span class="ruby-value str">&quot;Account Security&quot;</span>
+159:     <span class="ruby-ivar">@default_password_scan_version</span> = <span class="ruby-value str">&quot;all&quot;</span>
+160:     <span class="ruby-ivar">@default_password_scan_column_names</span> = <span class="ruby-node">]Username Threat_Level Password Description Account_Status]</span> 
+161:     <span class="ruby-ivar">@default_password_scan_results</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+162:     <span class="ruby-ivar">@completed_checks</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;default_password_scan&quot;</span>
+163:     <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@dba_users</span>
+164:       <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">warn</span>(<span class="ruby-value str">&quot;User list scan has not completed so default password checking cannot be carried out.  Ensure that this is enabled in the configuration file&quot;</span>)
+165:       <span class="ruby-keyword kw">return</span>
+166:     <span class="ruby-keyword kw">end</span>
+167:     <span class="ruby-keyword kw">begin</span>
+168:       <span class="ruby-identifier">password_file</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">password_file</span>,<span class="ruby-value str">&quot;a+&quot;</span>)
+169:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">password_file</span>.<span class="ruby-identifier">stat</span>.<span class="ruby-identifier">zero?</span>
+170:         <span class="ruby-identifier">open</span>(<span class="ruby-value str">&quot;http://www.petefinnigan.com/default/oracle_default_passwords.csv&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">data</span><span class="ruby-operator">|</span>
+171:           <span class="ruby-identifier">password_file</span>.<span class="ruby-identifier">write</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">read</span>
+172:         <span class="ruby-keyword kw">end</span>
+173:       <span class="ruby-keyword kw">end</span>
+174:     <span class="ruby-keyword kw">rescue</span>  <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ENOENT</span>
+175:       <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">warn</span>(<span class="ruby-value str">&quot;Couldn't Open default password file &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">password_file</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot; .  Please download from http://www.petefinnigan.com/default/oracle_default_passwords.csv and save as 'default_passwords' &quot;</span>)
+176:       <span class="ruby-ivar">@default_password_scan_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-value str">'Warning'</span>, <span class="ruby-value str">&quot;Couldn't open default password file&quot;</span>, <span class="ruby-value str">&quot;please review error log&quot;</span>, <span class="ruby-value str">&quot; &quot;</span>, <span class="ruby-value str">&quot; &quot;</span>]
+177:       
+178:       
+179:     <span class="ruby-keyword kw">end</span>
+180:       
+181:     <span class="ruby-identifier">password_file</span>.<span class="ruby-identifier">each_line</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>  
+182:       <span class="ruby-identifier">line</span> = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">','</span>)
+183:       <span class="ruby-comment cmt">#Only run if there's a hash available for this line</span>
+184:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">line</span>[<span class="ruby-value">4</span>]
+185:         <span class="ruby-comment cmt">#Check if this user exists by checking the dba_users hash</span>
+186:         <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@dba_users</span>[<span class="ruby-identifier">line</span>[<span class="ruby-value">2</span>]]
+187:           <span class="ruby-comment cmt">#Compare the hashes from the default passwords list and the dba_users hash</span>
+188:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">line</span>[<span class="ruby-value">4</span>] <span class="ruby-operator">==</span> <span class="ruby-ivar">@dba_users</span>[<span class="ruby-identifier">line</span>[<span class="ruby-value">2</span>]][<span class="ruby-value">1</span>]
+189:             <span class="ruby-comment cmt">#Write out a line to the default passwords hash with the username as a key </span>
+190:             <span class="ruby-comment cmt">#and the threat level, clear test password, description of the account and the status of the account</span>
+191:             <span class="ruby-ivar">@default_password_scan_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">line</span>[<span class="ruby-value">2</span>], <span class="ruby-identifier">line</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">line</span>[<span class="ruby-value">3</span>], <span class="ruby-identifier">line</span>[<span class="ruby-value">5</span>].<span class="ruby-identifier">chomp</span>, <span class="ruby-ivar">@dba_users</span>[<span class="ruby-identifier">line</span>[<span class="ruby-value">2</span>]][<span class="ruby-value">0</span>]]
+192:             <span class="ruby-comment cmt">#now remove the user here from the @dba_users hash so it's not checked for weak passwords too</span>
+193:             <span class="ruby-ivar">@dba_users</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">line</span>[<span class="ruby-value">2</span>])
+194:           <span class="ruby-keyword kw">end</span>
+195:         <span class="ruby-keyword kw">end</span>
+196:       <span class="ruby-keyword kw">end</span>
+197:     <span class="ruby-keyword kw">end</span>
+198:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="default-sid-scan-method" class="method-detail ">
+				<a name="method-i-default_sid_scan"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">default_sid_scan</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Reports if a default SID is being used.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="default-sid-scan-source">
+<pre>
+     <span class="ruby-comment cmt"># File rora_scanner.rb, line 471</span>
+471: <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">default_sid_scan</span>
+472:   <span class="ruby-ivar">@default_sid_scan_source</span> = <span class="ruby-value str">'CIS 2.12'</span>
+473:   <span class="ruby-ivar">@default_sid_scan_id</span> = <span class="ruby-value str">&quot;RS0008&quot;</span>
+474:   <span class="ruby-ivar">@default_sid_scan_description</span> = <span class="ruby-value str">'Leaving the Oracle SID at its default value makes it easier for an attacker to attach to the database and increases the susceptibility of the database to automated attacks'</span>
+475:   <span class="ruby-ivar">@default_sid_scan_sql</span> = <span class="ruby-value str">''</span>
+476:   <span class="ruby-ivar">@default_sid_scan_implications</span> = <span class="ruby-value str">'Default SIDs may be easily guessed by an attacker'</span>
+477:   <span class="ruby-ivar">@default_sid_scan_banner</span> = <span class="ruby-value str">'Default SID scan'</span>
+478:   <span class="ruby-ivar">@default_sid_scan_vuln_class</span> = <span class="ruby-value str">'Database Configuration'</span>
+479:   <span class="ruby-ivar">@default_sid_scan_version</span> = <span class="ruby-value str">'ALL'</span>
+480:   <span class="ruby-ivar">@default_sid_scan_column_names</span> = <span class="ruby-node">]SID Default?]</span>
+481:   <span class="ruby-ivar">@default_sid_scan_results</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+482:   <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">info</span>(<span class="ruby-value str">&quot;Starting Default SID scan&quot;</span>)
+483:   <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@database_connection_string</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp re">/\//</span>)[<span class="ruby-value">1</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">'ORCL'</span>
+484:     <span class="ruby-ivar">@default_sid_scan_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-value str">'ORCL'</span>, <span class="ruby-value str">'Y'</span>]
+485:     <span class="ruby-ivar">@completed_checks</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'default_sid_scan'</span>
+486:   <span class="ruby-keyword kw">end</span>
+487:   <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">info</span>(<span class="ruby-value str">&quot;completed default SID scan&quot;</span>)
+488: <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="default-tablespace-scan-method" class="method-detail ">
+				<a name="method-i-default_tablespace_scan"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">default_tablespace_scan</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Provides a list of users (other than SYS) who have the default tablespace
+set.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="default-tablespace-scan-source">
+<pre>
+     <span class="ruby-comment cmt"># File rora_scanner.rb, line 491</span>
+491: <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">default_tablespace_scan</span>
+492:   <span class="ruby-ivar">@default_tablespace_scan_source</span> = <span class="ruby-value str">'CIS 9.01'</span>
+493:   <span class="ruby-ivar">@default_tablespace_scan_id</span> = <span class="ruby-value str">&quot;RS0009&quot;</span>
+494:   <span class="ruby-ivar">@default_tablespace_scan_description</span> = <span class="ruby-value str">'This is a listing of all users (except SYS) who have a default tablespace of SYSTEM'</span>
+495:   <span class="ruby-ivar">@default_tablespace_scan_sql</span> = <span class="ruby-value str">'select username,default_tablespace from dba_users'</span>
+496:   <span class="ruby-ivar">@default_tablespace_scan_implications</span> = <span class="ruby-value str">'If users have their default tablespace of SYSTEM there is a risk of a denial of service condition occuring on the SYSTEM tablespace'</span>
+497:   <span class="ruby-ivar">@default_tablespace_scan_banner</span> = <span class="ruby-value str">'Default Tablespace scan'</span>
+498:   <span class="ruby-ivar">@default_tablespace_scan_vuln_class</span> = <span class="ruby-value str">'User Configuration'</span>
+499:   <span class="ruby-ivar">@default_tablespace_scan_version</span> = <span class="ruby-value str">'ALL'</span>
+500:   <span class="ruby-ivar">@default_tablespace_scan_column_names</span> = <span class="ruby-node">]User Tablespace]</span>
+501:   <span class="ruby-ivar">@default_tablespace_scan_results</span>= <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+502:   
+503:   <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">info</span>(<span class="ruby-value str">&quot;Starting default tablespace scan&quot;</span>)
+504:   
+505:   <span class="ruby-ivar">@conn</span>.<span class="ruby-identifier">exec</span>(<span class="ruby-ivar">@default_tablespace_scan_sql</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span>
+506:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">'SYSTEM'</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">!=</span> <span class="ruby-value str">'SYS'</span>
+507:       <span class="ruby-ivar">@default_tablespace_scan_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">r</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">r</span>[<span class="ruby-value">1</span>]]
+508:     <span class="ruby-keyword kw">end</span>
+509:   <span class="ruby-keyword kw">end</span>
+510: 
+511:   <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@default_tablespace_scan_results</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+512:     <span class="ruby-ivar">@completed_checks</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'default_tablespace_scan'</span>
+513:   <span class="ruby-keyword kw">end</span>
+514:   
+515:   <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">info</span>(<span class="ruby-value str">&quot;Completed default tablespace scan&quot;</span>)
+516: 
+517: <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="find-version-method" class="method-detail ">
+				<a name="method-i-find_version"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">find_version</span><span
+						class="method-args">(version_string)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="find-version-source">
+<pre>
+     <span class="ruby-comment cmt"># File rora_scanner.rb, line 101</span>
+101:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">find_version</span>(<span class="ruby-identifier">version_string</span>)
+102:       <span class="ruby-identifier">version</span> = <span class="ruby-identifier">version_string</span>[<span class="ruby-regexp re">/\d+\.\d+\.\d+\.\d+\.\d+/</span>]
+103:       <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">version</span>  
+104:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="password-profile-scan-method" class="method-detail ">
+				<a name="method-i-password_profile_scan"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">password_profile_scan</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Scans the password profile from dba_profiles for password parameters (eg,
+failed_login_attempts, password life time)
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="password-profile-scan-source">
+<pre>
+     <span class="ruby-comment cmt"># File rora_scanner.rb, line 239</span>
+239:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">password_profile_scan</span>
+240:     <span class="ruby-comment cmt">#TODO Need to sort out the fact that the &quot;password verify function&quot; test won't work at the moment.</span>
+241:     <span class="ruby-ivar">@password_profile_scan_source</span> = <span class="ruby-value str">'CIS 8.01 - 8.06 &amp; 8.08'</span>
+242:     <span class="ruby-ivar">@password_profile_scan_id</span> = <span class="ruby-value str">&quot;RS0004&quot;</span>
+243:     <span class="ruby-ivar">@password_profile_scan_description</span> = <span class="ruby-value str">'Password profiles are important to ensure that user passwords are properly managed and also to mitigate against brute force password guessing attacks.'</span>
+244:     <span class="ruby-ivar">@password_profile_scan_sql</span> = <span class="ruby-value str">&quot;select PROFILE,RESOURCE_NAME,LIMIT from dba_profiles WHERE resource_type = 'PASSWORD'&quot;</span>
+245:     <span class="ruby-ivar">@password_profile_scan_implications</span> = <span class="ruby-value str">&quot;Incorrectly set values in this section could allow for users to set passwords which don't comply with the organisations access control policy or industry good practice&quot;</span>
+246:     <span class="ruby-ivar">@password_profile_scan_banner</span> = <span class="ruby-value str">&quot;Password Profile&quot;</span>
+247:     <span class="ruby-ivar">@password_profile_scan_vuln_class</span> = <span class="ruby-value str">&quot;Account Security&quot;</span>
+248:     <span class="ruby-ivar">@password_profile_scan_version</span> = <span class="ruby-value str">&quot;all&quot;</span>
+249:     <span class="ruby-ivar">@password_profile_scan_column_names</span> = <span class="ruby-node">]profile_name resource_name limit desired_limit]</span>
+250:     <span class="ruby-ivar">@password_profile_scan_results</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+251:     <span class="ruby-identifier">results</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+252:     <span class="ruby-identifier">default_profile</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+253:     <span class="ruby-identifier">correct_profile</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+254:     <span class="ruby-identifier">correct_profile</span>[<span class="ruby-value str">'FAILED_LOGIN_ATTEMPTS'</span>] = <span class="ruby-value">3</span>
+255:     <span class="ruby-identifier">correct_profile</span>[<span class="ruby-value str">'PASSWORD_LIFE_TIME'</span>] = <span class="ruby-value">90</span>
+256:     <span class="ruby-identifier">correct_profile</span>[<span class="ruby-value str">'PASSWORD_REUSE_MAX'</span>] = <span class="ruby-value">20</span>
+257:     <span class="ruby-identifier">correct_profile</span>[<span class="ruby-value str">'PASSWORD_REUSE_TIME'</span>] = <span class="ruby-value">365</span>
+258:     <span class="ruby-identifier">correct_profile</span>[<span class="ruby-value str">'PASSWORD_LOCK_TIME'</span>] = <span class="ruby-value">1</span>
+259:     <span class="ruby-identifier">correct_profile</span>[<span class="ruby-value str">'PASSWORD_GRACE_TIME'</span>] = <span class="ruby-value">3</span>
+260:     <span class="ruby-identifier">correct_profile</span>[<span class="ruby-value str">'PASSWORD_VERIFY_FUNCTION'</span>] = <span class="ruby-value">0</span>
+261:     <span class="ruby-ivar">@conn</span>.<span class="ruby-identifier">exec</span>(<span class="ruby-ivar">@password_profile_scan_sql</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span>
+262:       <span class="ruby-identifier">results</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">+</span> <span class="ruby-value str">','</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">+</span> <span class="ruby-value str">','</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">2</span>]
+263:     <span class="ruby-keyword kw">end</span>
+264:     <span class="ruby-comment cmt">#Need to sort out the DEFAULT profile stuff first before doing the remaining profiles.</span>
+265:     <span class="ruby-identifier">results</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">result</span><span class="ruby-operator">|</span>
+266:       <span class="ruby-comment cmt">#begin </span>
+267:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">result</span> <span class="ruby-operator">=~</span><span class="ruby-regexp re">/^DEFAULT/</span>
+268:         <span class="ruby-identifier">rsplit</span> = <span class="ruby-identifier">result</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">','</span>)
+269:         <span class="ruby-identifier">default_profile</span>[<span class="ruby-identifier">rsplit</span>[<span class="ruby-value">1</span>]] = <span class="ruby-identifier">rsplit</span>[<span class="ruby-value">2</span>]        
+270:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">default_profile</span>[<span class="ruby-identifier">rsplit</span>[<span class="ruby-value">1</span>]].<span class="ruby-identifier">to_s</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'UNLIMITED'</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">default_profile</span>[<span class="ruby-identifier">rsplit</span>[<span class="ruby-value">1</span>]].<span class="ruby-identifier">to_i</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">correct_profile</span>[<span class="ruby-identifier">rsplit</span>[<span class="ruby-value">1</span>]] 
+271:           <span class="ruby-ivar">@password_profile_scan_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-value str">'DEFAULT'</span>,<span class="ruby-identifier">rsplit</span>[<span class="ruby-value">1</span>],<span class="ruby-identifier">rsplit</span>[<span class="ruby-value">2</span>],<span class="ruby-identifier">correct_profile</span>[<span class="ruby-identifier">rsplit</span>[<span class="ruby-value">1</span>]]]
+272:         <span class="ruby-keyword kw">end</span>
+273:         <span class="ruby-identifier">results</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">result</span>)
+274:       <span class="ruby-keyword kw">end</span>
+275: 
+276:     <span class="ruby-keyword kw">end</span>
+277:     
+278:     <span class="ruby-comment cmt">#Should have all the DEFAULT profile stuff out of the way now so can proceed with analysing the other profile entries</span>
+279:     
+280:     <span class="ruby-identifier">results</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">result</span><span class="ruby-operator">|</span>
+281:       
+282:       <span class="ruby-identifier">rsplit</span> = <span class="ruby-identifier">result</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">','</span>)
+283:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">rsplit</span>[<span class="ruby-value">2</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">'DEFAULT'</span>
+284:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">default_profile</span>[<span class="ruby-identifier">rsplit</span>[<span class="ruby-value">1</span>]].<span class="ruby-identifier">to_s</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'UNLIMITED'</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">default_profile</span>[<span class="ruby-identifier">rsplit</span>[<span class="ruby-value">1</span>]].<span class="ruby-identifier">to_i</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">correct_profile</span>[<span class="ruby-identifier">rsplit</span>[<span class="ruby-value">1</span>]]
+285:           <span class="ruby-ivar">@password_profile_scan_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">rsplit</span>[<span class="ruby-value">0</span>],<span class="ruby-identifier">rsplit</span>[<span class="ruby-value">1</span>],<span class="ruby-identifier">rsplit</span>[<span class="ruby-value">2</span>],<span class="ruby-identifier">correct_profile</span>[<span class="ruby-identifier">rsplit</span>[<span class="ruby-value">1</span>]]]
+286:         <span class="ruby-keyword kw">end</span>
+287:       <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">rsplit</span>[<span class="ruby-value">2</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">'UNLIMITED'</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">rsplit</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">to_i</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">correct_profile</span>[<span class="ruby-identifier">rsplit</span>[<span class="ruby-value">1</span>]]
+288:         <span class="ruby-ivar">@password_profile_scan_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">rsplit</span>[<span class="ruby-value">0</span>],<span class="ruby-identifier">rsplit</span>[<span class="ruby-value">1</span>],<span class="ruby-identifier">rsplit</span>[<span class="ruby-value">2</span>],<span class="ruby-identifier">correct_profile</span>[<span class="ruby-identifier">rsplit</span>[<span class="ruby-value">1</span>]]]
+289:       <span class="ruby-keyword kw">end</span>
+290:       
+291:     <span class="ruby-keyword kw">end</span>
+292:   <span class="ruby-ivar">@completed_checks</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'password_profile_scan'</span>  
+293:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="sys-privs-rights-scan-method" class="method-detail ">
+				<a name="method-i-sys_privs_rights_scan"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">sys_privs_rights_scan</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Scans the dba_sys_privs view for excessive privileges
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="sys-privs-rights-scan-source">
+<pre>
+     <span class="ruby-comment cmt"># File rora_scanner.rb, line 388</span>
+388: <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sys_privs_rights_scan</span>
+389:   <span class="ruby-ivar">@sys_privs_rights_scan_source</span> = <span class="ruby-value str">'CIS 9.x'</span>
+390:   <span class="ruby-ivar">@sys_privs_rights_scan_id</span> = <span class="ruby-value str">&quot;RS0006&quot;</span>
+391:   <span class="ruby-ivar">@sys_privs_rights_scan_description</span> = <span class="ruby-value str">'Wide ranging system privileges such as SELECT ANY TABLE should be appropriately restricted.  Review the lists below to ensure that only required users have access'</span>
+392:   <span class="ruby-ivar">@sys_privs_rights_scan_sql</span> = <span class="ruby-value str">&quot;select privilege,grantee from dba_sys_privs where privilege like '%ANY%' or privilege = 'EXEMPT ACCESS POLICY' &quot;</span>
+393:   <span class="ruby-ivar">@sys_privs_rights_scan_implications</span> = <span class="ruby-value str">'Excessive access rights may allow users to access or modify data that they should not have access to.'</span>
+394:   <span class="ruby-ivar">@sys_privs_rights_scan_banner</span> = <span class="ruby-value str">'System Privileges Scan'</span>
+395:   <span class="ruby-ivar">@sys_privs_rights_scan_vuln_class</span> = <span class="ruby-value str">'Access Rights'</span>
+396:   <span class="ruby-ivar">@sys_privs_rights_scan_version</span> = <span class="ruby-value str">'ALL'</span>
+397:   <span class="ruby-ivar">@sys_privs_rights_scan_column_names</span> = <span class="ruby-node">]grantee privileges]</span>
+398:   <span class="ruby-ivar">@sys_privs_rights_scan_results</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+399:   <span class="ruby-identifier">access_rights_hash</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+400:   <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-value str">&quot;Running sys privs scan&quot;</span>)
+401:   <span class="ruby-ivar">@conn</span>.<span class="ruby-identifier">exec</span>(<span class="ruby-ivar">@sys_privs_rights_scan_sql</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span>
+402:     <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">access_rights_hash</span>[<span class="ruby-identifier">r</span>[<span class="ruby-value">1</span>]]
+403:       <span class="ruby-identifier">access_rights_hash</span>[<span class="ruby-identifier">r</span>[<span class="ruby-value">1</span>]] = <span class="ruby-identifier">r</span>[<span class="ruby-value">0</span>]
+404:     <span class="ruby-keyword kw">else</span>
+405:       <span class="ruby-identifier">access_rights_hash</span>[<span class="ruby-identifier">r</span>[<span class="ruby-value">1</span>]] = <span class="ruby-identifier">access_rights_hash</span>[<span class="ruby-identifier">r</span>[<span class="ruby-value">1</span>]] <span class="ruby-operator">+</span> <span class="ruby-value str">','</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">0</span>]
+406:     <span class="ruby-keyword kw">end</span>
+407:   <span class="ruby-keyword kw">end</span>
+408:   
+409:   <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-value str">&quot;sys privs query complete adding values to results array&quot;</span>)
+410:   <span class="ruby-identifier">access_rights_hash</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>,<span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+411:   
+412:     <span class="ruby-ivar">@sys_privs_rights_scan_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span>]
+413:   <span class="ruby-keyword kw">end</span>
+414:   
+415:   <span class="ruby-ivar">@completed_checks</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'sys_privs_rights_scan'</span>
+416: <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="tab-privs-rights-scan-method" class="method-detail ">
+				<a name="method-i-tab_privs_rights_scan"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">tab_privs_rights_scan</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Reviews a list of &#8220;sensitive&#8221; tables from the CIS standard 
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="tab-privs-rights-scan-source">
+<pre>
+     <span class="ruby-comment cmt"># File rora_scanner.rb, line 419</span>
+419: <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">tab_privs_rights_scan</span>
+420:   <span class="ruby-ivar">@tab_privs_rights_scan_source</span> = <span class="ruby-value str">'CIS 9.x'</span>
+421:   <span class="ruby-ivar">@tab_privs_rights_scan_id</span> = <span class="ruby-value str">'RS0011'</span>
+422:   <span class="ruby-ivar">@tab_privs_rights_scan_description</span> = <span class="ruby-value str">'Access to sensitive tables such as SYS.AUD$ and SYS.USER$ should be restricted to SYS and DBA users'</span>
+423:   <span class="ruby-ivar">@tab_privs_rights_scan_sql</span> = <span class="ruby-value str">'select grantee,table_name,privilege from dba_tab_privs'</span>
+424:   <span class="ruby-ivar">@tab_privs_rights_scan_implications</span> = <span class="ruby-value str">'Excessive access rights may allow users to access or modify data that they should not have access to.'</span>
+425:   <span class="ruby-ivar">@tab_privs_rights_scan_banner</span> = <span class="ruby-value str">'Table Access Rights Scan'</span>
+426:   <span class="ruby-ivar">@tab_privs_rights_scan_vuln_class</span> = <span class="ruby-value str">'Access Rights'</span>
+427:   <span class="ruby-ivar">@tab_privs_rights_scan_version</span> = <span class="ruby-value str">'ALL'</span>
+428:   <span class="ruby-ivar">@tab_privs_rights_scan_column_names</span> = <span class="ruby-node">]grantee table rights]</span>
+429:   <span class="ruby-ivar">@tab_privs_rights_scan_results</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+430:   <span class="ruby-identifier">table_rights_array</span> =<span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+431:   <span class="ruby-ivar">@conn</span>.<span class="ruby-identifier">exec</span>(<span class="ruby-ivar">@tab_privs_rights_scan_sql</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span>
+432:     <span class="ruby-comment cmt">#This next line should remove any grants to the DBA role or the SYS user from the report as they already have full privilege to the system</span>
+433:     <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">'SYS'</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">'DBA'</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">'SELECT_CATALOG_ROLE'</span>
+434:       <span class="ruby-comment cmt">#This is the list of 'sensitive' tables from the CIS standard</span>
+435:       <span class="ruby-comment cmt">#TODO: Need to find some way to clean up this line as it's really ugly</span>
+436:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">'USER$'</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">'AUD$'</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">'USER_HISTORY$'</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">'LINK$'</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">'SOURCE$'</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">'STATS$SQLTEXT'</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">'STATS$SQL_SUM'</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^X\$/</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">'DBA_ROLES'</span>  <span class="ruby-operator">||</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^V_\$/</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">'ALL_SOURCE'</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">'DBA_SYS_PRIVS'</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">'DBA_TAB_PRIVS'</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">'DBA_ROLE_PRIVS'</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">'DBA_USERS'</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">'ROLE_ROLE_PRIVS'</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">'USER_TAB_PRIVS'</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">'USER_ROLE_PRIVS'</span>
+437:         <span class="ruby-identifier">table_rights_array</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">r</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">r</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">r</span>[<span class="ruby-value">2</span>]]
+438:       <span class="ruby-keyword kw">end</span>
+439:     <span class="ruby-keyword kw">end</span>
+440:   <span class="ruby-keyword kw">end</span>
+441:   <span class="ruby-identifier">table_rights_array</span>.<span class="ruby-identifier">sort!</span>
+442:   <span class="ruby-identifier">table_rights_array</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+443:     <span class="ruby-ivar">@tab_privs_rights_scan_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">line</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">line</span>[<span class="ruby-value">1</span>],<span class="ruby-identifier">line</span>[<span class="ruby-value">2</span>]]        
+444:   <span class="ruby-keyword kw">end</span>
+445:   <span class="ruby-ivar">@completed_checks</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'tab_privs_rights_scan'</span>
+446: <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="user-list-scan-method" class="method-detail ">
+				<a name="method-i-user_list_scan"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">user_list_scan</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+populates the user list with username, password and account status by
+querying dba_users.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="user-list-scan-source">
+<pre>
+     <span class="ruby-comment cmt"># File rora_scanner.rb, line 139</span>
+139:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">user_list_scan</span>
+140:    
+141:     <span class="ruby-ivar">@dba_users</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+142:     <span class="ruby-ivar">@conn</span>.<span class="ruby-identifier">exec</span>(<span class="ruby-value str">'select username,account_status,password from dba_users'</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span>
+143:       <span class="ruby-comment cmt">#Create a Hash with the username as the key and the account status and password as values</span>
+144:       <span class="ruby-ivar">@dba_users</span>[<span class="ruby-identifier">r</span>[<span class="ruby-value">0</span>]]= <span class="ruby-identifier">r</span>[<span class="ruby-value">1</span>],<span class="ruby-identifier">r</span>[<span class="ruby-value">2</span>]
+145:     <span class="ruby-keyword kw">end</span>
+146:   <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">OCIError</span>
+147:     <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">warn</span>(<span class="ruby-node">&quot;Oracle Error Encountered #{$!}&quot;</span>)
+148:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="user-role-privs-scan-method" class="method-detail ">
+				<a name="method-i-user_role_privs_scan"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">user_role_privs_scan</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="user-role-privs-scan-source">
+<pre>
+     <span class="ruby-comment cmt"># File rora_scanner.rb, line 448</span>
+448: <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">user_role_privs_scan</span>
+449:   <span class="ruby-ivar">@user_role_privs_scan_source</span> = <span class="ruby-value str">'CIS 9.23 &amp; 9.41 &amp; 9.42 &amp; 9.43'</span>
+450:   <span class="ruby-ivar">@user_role_privs_scan_id</span> = <span class="ruby-value str">&quot;RS0007&quot;</span>
+451:   <span class="ruby-ivar">@user_role_privs_scan_description</span> = <span class="ruby-value str">'There are several default roles shipped with Oracle which should not be granted to end users, as they may grant exessive privileges. Review the list below and revoke where possible'</span>
+452:   <span class="ruby-ivar">@user_role_privs_scan_sql</span> = <span class="ruby-value str">'select username, granted_role from user_role_privs'</span>
+453:   <span class="ruby-ivar">@user_role_privs_scan_implications</span> = <span class="ruby-value str">'Use of Oracle supplied default roles may result in users having a greater level of privileges to the database than intended'</span>
+454:   <span class="ruby-ivar">@user_role_privs_scan_banner</span> = <span class="ruby-value str">'Role Privileges scan'</span>
+455:   <span class="ruby-ivar">@user_role_privs_scan_vuln_class</span> = <span class="ruby-value str">'Access Rights'</span>
+456:   <span class="ruby-ivar">@user_role_privs_scan_version</span> = <span class="ruby-value str">'ALL'</span>
+457:   <span class="ruby-ivar">@user_role_privs_scan_column_names</span> = <span class="ruby-node">]user role]</span>
+458:   <span class="ruby-ivar">@user_role_privs_scan_results</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+459: 
+460:   <span class="ruby-ivar">@conn</span>.<span class="ruby-identifier">exec</span>(<span class="ruby-ivar">@user_role_privs_scan_sql</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span>
+461:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/CATALOG|RESOURCE|CONNECT|DBA/</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">!=</span> <span class="ruby-value str">'SYS'</span>
+462:       <span class="ruby-ivar">@user_role_privs_scan_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">r</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">r</span>[<span class="ruby-value">1</span>]]
+463:     <span class="ruby-keyword kw">end</span>
+464:   <span class="ruby-keyword kw">end</span>
+465:   <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@user_role_privs_scan_results</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+466:     <span class="ruby-ivar">@completed_checks</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'user_role_privs_scan'</span>
+467:   <span class="ruby-keyword kw">end</span>
+468: <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="version-scan-method" class="method-detail ">
+				<a name="method-i-version_scan"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">version_scan</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns the version of Oracle in use as reported by the v$version view.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="version-scan-source">
+<pre>
+     <span class="ruby-comment cmt"># File rora_scanner.rb, line 99</span>
+ 99:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">version_scan</span>
+100:   
+101:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">find_version</span>(<span class="ruby-identifier">version_string</span>)
+102:       <span class="ruby-identifier">version</span> = <span class="ruby-identifier">version_string</span>[<span class="ruby-regexp re">/\d+\.\d+\.\d+\.\d+\.\d+/</span>]
+103:       <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">version</span>  
+104:     <span class="ruby-keyword kw">end</span>
+105:     <span class="ruby-ivar">@version_scan_source</span> = <span class="ruby-value str">&quot;rorascanner&quot;</span>
+106:     <span class="ruby-ivar">@version_scan_id</span> = <span class="ruby-value str">&quot;RS0001&quot;</span>
+107:     <span class="ruby-ivar">@version_scan_description</span> = <span class="ruby-value str">&quot;Version of Oracle running&quot;</span>
+108:     <span class="ruby-ivar">@version_scan_sql</span> = <span class="ruby-value str">&quot;select * from v$version&quot;</span>
+109:     <span class="ruby-ivar">@version_scan_implications</span> = <span class="ruby-value str">&quot; &quot;</span>
+110:     <span class="ruby-ivar">@version_scan_banner</span> = <span class="ruby-value str">&quot;Oracle Version&quot;</span>
+111:     <span class="ruby-ivar">@version_scan_vuln_class</span> = <span class="ruby-value str">&quot;Informational&quot;</span>
+112:     <span class="ruby-ivar">@version_scan_version</span> = <span class="ruby-value str">&quot;all&quot;</span>
+113:     <span class="ruby-ivar">@version_scan_column_names</span> = <span class="ruby-node">]Component_Name Version_Number]</span>
+114:     <span class="ruby-ivar">@version_scan_results</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span> 
+115:     <span class="ruby-ivar">@conn</span>.<span class="ruby-identifier">exec</span>(<span class="ruby-value str">'select * from v$version'</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span>
+116:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">0</span>]<span class="ruby-operator">=~</span><span class="ruby-regexp re">/Oracle/</span> 
+117:             <span class="ruby-ivar">@version_scan_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-value str">'ORACLE'</span>, <span class="ruby-identifier">find_version</span>(<span class="ruby-identifier">r</span>[<span class="ruby-value">0</span>]) ]
+118:       <span class="ruby-comment cmt">#Set the main version for later scans</span>
+119:       <span class="ruby-ivar">@version</span> = <span class="ruby-identifier">find_version</span>(<span class="ruby-identifier">r</span>[<span class="ruby-value">0</span>])
+120:       <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">info</span>(<span class="ruby-node">&quot;version is #{@version}&quot;</span>)
+121:       <span class="ruby-keyword kw">end</span>
+122:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">0</span>]<span class="ruby-operator">=~</span><span class="ruby-regexp re">/PL\/SQL/</span>
+123:             <span class="ruby-ivar">@version_scan_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-value str">'PLSQL'</span>, <span class="ruby-identifier">find_version</span>(<span class="ruby-identifier">r</span>[<span class="ruby-value">0</span>]) ]
+124:       <span class="ruby-keyword kw">end</span>
+125:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">0</span>]<span class="ruby-operator">=~</span><span class="ruby-regexp re">/CORE/</span>
+126:         <span class="ruby-ivar">@version_scan_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-value str">'CORE'</span>, <span class="ruby-identifier">find_version</span>(<span class="ruby-identifier">r</span>[<span class="ruby-value">0</span>]) ]
+127:       <span class="ruby-keyword kw">end</span>
+128:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">0</span>]<span class="ruby-operator">=~</span><span class="ruby-regexp re">/TNS/</span>
+129:             <span class="ruby-ivar">@version_scan_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-value str">'TNS'</span>, <span class="ruby-identifier">find_version</span>(<span class="ruby-identifier">r</span>[<span class="ruby-value">0</span>]) ]
+130:       <span class="ruby-keyword kw">end</span>
+131:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">0</span>]<span class="ruby-operator">=~</span><span class="ruby-regexp re">/NLSRTL/</span>
+132:         <span class="ruby-ivar">@version_scan_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-value str">'NLSRTL'</span>, <span class="ruby-identifier">find_version</span>(<span class="ruby-identifier">r</span>[<span class="ruby-value">0</span>]) ]
+133:       <span class="ruby-keyword kw">end</span>
+134:     <span class="ruby-keyword kw">end</span>
+135:     <span class="ruby-ivar">@completed_checks</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;version_scan&quot;</span>
+136:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="vparameter-scan-method" class="method-detail ">
+				<a name="method-i-vparameter_scan"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">vparameter_scan</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+There are several parameters which are relevent to securty, in the
+v$parameter view.  This check scans them.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="vparameter-scan-source">
+<pre>
+     <span class="ruby-comment cmt"># File rora_scanner.rb, line 297</span>
+297: <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">vparameter_scan</span>
+298:   <span class="ruby-ivar">@vparameter_source</span> = <span class="ruby-value str">'various'</span>
+299:   <span class="ruby-ivar">@vparameter_id</span> = <span class="ruby-value str">&quot;RS0005&quot;</span>
+300:   <span class="ruby-ivar">@vparameter_description</span> = <span class="ruby-value str">'This section checks values from the v$parameter view against desired values specified in the CIS standard and returns exceptions.  Consider modifying these values in-line with the '</span>
+301:   <span class="ruby-ivar">@vparameter_sql</span> = <span class="ruby-value str">&quot;select name,value from v$parameter&quot;</span>
+302:   <span class="ruby-ivar">@vparameter_implications</span> = <span class="ruby-value str">&quot;Where operationally possible, the parameters should be configured in-line with the recommendations from CIS&quot;</span>
+303:   <span class="ruby-ivar">@vparameter_banner</span> = <span class="ruby-value str">&quot;v$parameter checks&quot;</span>
+304:   <span class="ruby-ivar">@vparameter_vuln_class</span> = <span class="ruby-value str">&quot;Configuration Security&quot;</span>
+305:   <span class="ruby-ivar">@vparameter_version</span> = <span class="ruby-value str">&quot;10G,9i&quot;</span>
+306:   <span class="ruby-ivar">@vparameter_column_names</span> = <span class="ruby-node">]CIS_standard_Section parameter current_value desired_value]</span>
+307:   <span class="ruby-ivar">@vparameter_results</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+308:   
+309:   <span class="ruby-identifier">parameter_results</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+310:   <span class="ruby-ivar">@conn</span>.<span class="ruby-identifier">exec</span>(<span class="ruby-ivar">@vparameter_sql</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span>
+311:     <span class="ruby-identifier">parameter_results</span>[<span class="ruby-identifier">r</span>[<span class="ruby-value">0</span>]] = <span class="ruby-identifier">r</span>[<span class="ruby-value">1</span>]
+312:   <span class="ruby-keyword kw">end</span>
+313:   <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-value str">&quot;starting parameter checks&quot;</span>)
+314:   <span class="ruby-comment cmt">#Ok now we have a hash of all the parameters from v$parameter its relatively </span>
+315:   <span class="ruby-comment cmt">#straightforward to check against the desired values</span>
+316:   
+317:   <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-value str">&quot;doing global names check&quot;</span>)
+318:   <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">parameter_results</span>[<span class="ruby-value str">'global_names'</span>] <span class="ruby-operator">!=</span> <span class="ruby-value str">'TRUE'</span>
+319:     <span class="ruby-ivar">@vparameter_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-value str">'CIS 4.02'</span>, <span class="ruby-value str">'GLOBAL_NAMES'</span>, <span class="ruby-identifier">parameter_results</span>[<span class="ruby-value str">'global_names'</span>], <span class="ruby-value str">'TRUE'</span> ]
+320:   <span class="ruby-keyword kw">end</span>
+321: 
+322:   <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-value str">&quot;doing max enabled roles check&quot;</span>)
+323:   <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">parameter_results</span>[<span class="ruby-value str">'max_enabled_roles'</span>].<span class="ruby-identifier">to_i</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">30</span>
+324:     <span class="ruby-ivar">@vparameter_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-value str">'CIS 4.03'</span>, <span class="ruby-value str">'MAX_ENABLED_ROLES'</span>, <span class="ruby-identifier">parameter_results</span>[<span class="ruby-value str">'max_enabled_roles'</span>],<span class="ruby-value str">'&lt;30'</span>]
+325:   <span class="ruby-keyword kw">end</span>
+326: 
+327:   <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-value str">&quot;doing remote_os_authent check&quot;</span>)
+328:   <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">parameter_results</span>[<span class="ruby-value str">'remote_os_authent'</span>] <span class="ruby-operator">!=</span> <span class="ruby-value str">'FALSE'</span>
+329:     <span class="ruby-ivar">@vparameter_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-value str">'CIS 4.04'</span>, <span class="ruby-value str">'REMOTE_OS_AUTHENT'</span>, <span class="ruby-identifier">parameter_results</span>[<span class="ruby-value str">'remote_os_authent'</span>], <span class="ruby-value str">'FALSE'</span>]
+330:   <span class="ruby-keyword kw">end</span>
+331:   
+332:   <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-value str">&quot;doing remote_os_roles check&quot;</span>)
+333:   <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">parameter_results</span>[<span class="ruby-value str">'remote_os_roles'</span>] <span class="ruby-operator">!=</span> <span class="ruby-value str">'FALSE'</span>
+334:     <span class="ruby-ivar">@vparameter_resutls</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-value str">'CIS 4.05'</span>, <span class="ruby-value str">'REMOTE_OS_ROLES'</span>, <span class="ruby-identifier">parameter_results</span>[<span class="ruby-value str">'remote_os_roles'</span>],<span class="ruby-value str">'FALSE'</span>]
+335:   <span class="ruby-keyword kw">end</span>
+336: 
+337:   <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-value str">&quot;doing remote_listener check&quot;</span>)
+338:   <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">parameter_results</span>[<span class="ruby-value str">'remote_listener'</span>]
+339:     <span class="ruby-ivar">@vparameter_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-value str">'CIS 4.06'</span>, <span class="ruby-value str">'REMOTE_LISTENER'</span>, <span class="ruby-identifier">parameter_results</span>[<span class="ruby-value str">'remote_listener'</span>],<span class="ruby-value str">'[NULL STRING]'</span>]
+340:   <span class="ruby-keyword kw">end</span>
+341: 
+342:   <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-value str">&quot;doing audit_trail check&quot;</span>)
+343:   <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">parameter_results</span>[<span class="ruby-value str">'audit_trail'</span>] <span class="ruby-operator">!=</span><span class="ruby-operator">~</span> <span class="ruby-regexp re">/OS|DB|TRUE/</span>
+344:     <span class="ruby-ivar">@vparameter_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-value str">'CIS 4.07'</span>, <span class="ruby-value str">'AUDIT_TRAIL'</span>, <span class="ruby-identifier">parameter_results</span>[<span class="ruby-value str">'audit_trail'</span>],<span class="ruby-value str">'OS,DB or TRUE'</span>]
+345:   <span class="ruby-keyword kw">end</span>
+346:   
+347:   <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-value str">&quot;doing os_authent_prefix check&quot;</span>)
+348:   <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">parameter_results</span>[<span class="ruby-value str">'os_authent_prefix'</span>]
+349:     <span class="ruby-ivar">@vparameter_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-value str">'CIS 4.08'</span>, <span class="ruby-value str">'OS_AUTHENT_PREFIX'</span>, <span class="ruby-identifier">parameter_results</span>[<span class="ruby-value str">'os_authent_prefix'</span>],<span class="ruby-value str">'[NULL STRING]'</span>]
+350:   <span class="ruby-keyword kw">end</span>
+351:   
+352:   <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-value str">&quot;doing os_roles check&quot;</span>)
+353:   <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">parameter_results</span>[<span class="ruby-value str">'os_roles'</span>] <span class="ruby-operator">!=</span> <span class="ruby-value str">'FALSE'</span>
+354:     <span class="ruby-ivar">@vparameter_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-value str">'CIS 4.09'</span>, <span class="ruby-value str">'OS_ROLES'</span>, <span class="ruby-identifier">parameter_results</span>[<span class="ruby-value str">'os_roles'</span>],<span class="ruby-value str">'FALSE'</span>]
+355:   <span class="ruby-keyword kw">end</span>
+356:   
+357:   <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-value str">&quot;doing utl_file_dir check&quot;</span>)
+358:   <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">parameter_results</span>[<span class="ruby-value str">'utl_file_dir'</span>]
+359:     <span class="ruby-ivar">@vparameter_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-value str">'CIS 4.10'</span>, <span class="ruby-value str">'UTL_FILE_DIR'</span>, <span class="ruby-identifier">parameter_results</span>[<span class="ruby-value str">'utl_file_dir'</span>],<span class="ruby-value str">'[NOT SET]'</span>]
+360:   <span class="ruby-keyword kw">end</span>
+361:   
+362:   <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-value str">&quot;doing sql92_security check&quot;</span>)
+363:   <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">parameter_results</span>[<span class="ruby-value str">'sql92_security'</span>] <span class="ruby-operator">!=</span> <span class="ruby-value str">'TRUE'</span>
+364:     <span class="ruby-ivar">@vparameter_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-value str">'CIS 4.13'</span>, <span class="ruby-value str">'SQL92_SECURITY'</span>, <span class="ruby-identifier">parameter_results</span>[<span class="ruby-value str">'sql92_security'</span>],<span class="ruby-value str">'TRUE'</span>]
+365:   <span class="ruby-keyword kw">end</span>
+366:   
+367:   <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-value str">&quot;doing o7_dictionary_accessibility check&quot;</span>)
+368:   <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">parameter_results</span>[<span class="ruby-value str">'o7_dictionary_accessibility'</span>] <span class="ruby-operator">!=</span> <span class="ruby-value str">'FALSE'</span>
+369:     <span class="ruby-ivar">@vparameter_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-value str">'CIS 4.18'</span>, <span class="ruby-value str">'O7_DICTIONARY_ACCESSIBILITY'</span>, <span class="ruby-identifier">parameter_results</span>[<span class="ruby-value str">'o7_dictionary_accessibility'</span>],<span class="ruby-value str">'FALSE'</span>]
+370:   <span class="ruby-keyword kw">end</span>
+371:   
+372:   <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-value str">&quot;doing audit_sys_operations check&quot;</span>)
+373:   <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">parameter_results</span>[<span class="ruby-value str">'audit_sys_operations'</span>] <span class="ruby-operator">!=</span> <span class="ruby-value str">'TRUE'</span>
+374:     <span class="ruby-ivar">@vparameter_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-value str">'CIS 4.20'</span>, <span class="ruby-value str">'AUDIT_SYS_OPERATIONS'</span>, <span class="ruby-identifier">parameter_results</span>[<span class="ruby-value str">'audit_sys_operations'</span>],<span class="ruby-value str">'TRUE'</span>]
+375:   <span class="ruby-keyword kw">end</span>
+376:   
+377:   <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-value str">&quot;doing remote_login_passwordfile check&quot;</span>)
+378:   <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">parameter_results</span>[<span class="ruby-value str">'remote_login_passwordfile'</span>] 
+379:     <span class="ruby-ivar">@vparameter_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-value str">'CIS 4.28'</span>, <span class="ruby-value str">'REMOTE_LOGIN_PASSWORDFILE'</span>, <span class="ruby-identifier">parameter_results</span>[<span class="ruby-value str">'remote_login_passwordfile'</span>],<span class="ruby-value str">'[NOT SET]'</span>]
+380:   <span class="ruby-keyword kw">end</span>
+381:   
+382:   
+383:   <span class="ruby-ivar">@completed_checks</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'vparameter'</span>
+384: <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="weak-password-scan-method" class="method-detail ">
+				<a name="method-i-weak_password_scan"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">weak_password_scan</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Scans for weak passwords using checkpwd (location should be specified in
+scanner.conf
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="weak-password-scan-source">
+<pre>
+     <span class="ruby-comment cmt"># File rora_scanner.rb, line 201</span>
+201:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">weak_password_scan</span>
+202:     <span class="ruby-ivar">@weak_password_scan_source</span> = <span class="ruby-value str">&quot;rorascanner&quot;</span>
+203:     <span class="ruby-ivar">@weak_password_scan_id</span> = <span class="ruby-value str">&quot;RS0003&quot;</span>
+204:     <span class="ruby-ivar">@weak_password_scan_description</span> = <span class="ruby-value str">&quot;This check provides a list of all the accounts with weak passwords and their account status&quot;</span>
+205:     <span class="ruby-ivar">@weak_password_scan_sql</span> = <span class="ruby-value str">&quot;&quot;</span>
+206:     <span class="ruby-ivar">@weak_password_scan_implications</span> = <span class="ruby-value str">&quot;Where there are accounts with weak passwords it may be possible for an attacker to gain unauthorised access to the database using those credentials &quot;</span>
+207:     <span class="ruby-ivar">@weak_password_scan_banner</span> = <span class="ruby-value str">&quot;Accounts with weak passwords set&quot;</span>
+208:     <span class="ruby-ivar">@weak_password_scan_vuln_class</span> = <span class="ruby-value str">&quot;Account Security&quot;</span>
+209:     <span class="ruby-ivar">@weak_password_scan_version</span> = <span class="ruby-value str">&quot;all&quot;</span>
+210:     <span class="ruby-ivar">@weak_password_scan_column_names</span> = <span class="ruby-node">]Username Password Account_Status]</span> 
+211:     <span class="ruby-ivar">@weak_password_scan_results</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+212:     
+213:     <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@dba_users</span>
+214:       <span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;user listing not done whoops&quot;</span>
+215:       <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">warn</span>(<span class="ruby-value str">&quot;Tried to complete weak password checking without user list. Please ensure that the user list plugin is enabled&quot;</span>)
+216:       <span class="ruby-identifier">exit</span>
+217:     <span class="ruby-keyword kw">end</span>
+218:     <span class="ruby-comment cmt">#TODO : Need to sort this out for windows runs </span>
+219:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">check_pwd</span>(<span class="ruby-identifier">username</span>,<span class="ruby-identifier">password</span>)
+220:       <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-ivar">@config</span>[<span class="ruby-value str">'RoraScanner'</span>][<span class="ruby-value str">'checkpwd_location'</span>])
+221:         <span class="ruby-keyword kw">return</span> <span class="ruby-node">%{#{@config['RoraScanner']['checkpwd_location']} -quiet #{username}:#{password} #{@config['RoraScanner']['password_list_location']} }</span>
+222:       <span class="ruby-keyword kw">else</span>
+223:         <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">warn</span>(<span class="ruby-value str">&quot;Couldn't find checkpwd, please confirm that this file is available and in the location specified in scanner.conf&quot;</span>)
+224:         <span class="ruby-keyword kw">return</span> [<span class="ruby-value str">&quot;Error&quot;</span>, <span class="ruby-value str">&quot;Couldn't find checkpwd&quot;</span>]
+225:       <span class="ruby-keyword kw">end</span>
+226:     <span class="ruby-keyword kw">end</span>
+227:     <span class="ruby-ivar">@dba_users</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>,<span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+228:       <span class="ruby-identifier">result</span> = <span class="ruby-identifier">check_pwd</span>(<span class="ruby-identifier">name</span>,<span class="ruby-identifier">value</span>[<span class="ruby-value">1</span>])
+229:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">result</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/weak password/</span>
+230:         <span class="ruby-identifier">rarray</span> = <span class="ruby-identifier">result</span>.<span class="ruby-identifier">chomp</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">' has weak password '</span>)
+231:         <span class="ruby-identifier">rarray</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">value</span>[<span class="ruby-value">0</span>]
+232:         <span class="ruby-ivar">@weak_password_scan_results</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">rarray</span>
+233:       <span class="ruby-keyword kw">end</span>
+234:     <span class="ruby-keyword kw">end</span>
+235:     <span class="ruby-ivar">@completed_checks</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'weak_password_scan'</span>
+236:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

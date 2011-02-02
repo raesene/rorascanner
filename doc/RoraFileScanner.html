@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: RoraFileScanner</title>
+
+	<link rel="stylesheet" href="./rdoc.css" type="text/css" media="screen" />
+
+	<script src="./js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="./rora_file_scanner_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="rora_file_scanner.rb">rora_file_scanner.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Object</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-i-parse_listener_file">#parse_listener_file</a></li>
+					
+					<li><a href="#method-i-parse_sqlnet_file">#parse_sqlnet_file</a></li>
+					
+					<li><a href="#method-i-parse_tnsnames_file">#parse_tnsnames_file</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+			<div id="includes-section" class="section">
+				<h3 class="section-header">Included Modules</h3>
+				<ul class="link-list">
+				
+				
+					<li><a class="include" href="RoraReporter.html">RoraReporter</a></li>
+				
+				
+				
+					<li><a class="include" href="RoraSqlnetChecks.html">RoraSqlnetChecks</a></li>
+				
+				
+				
+					<li><a class="include" href="RoraTnsnamesChecks.html">RoraTnsnamesChecks</a></li>
+				
+				
+				
+					<li><a class="include" href="RoraListenerChecks.html">RoraListenerChecks</a></li>
+				
+				
+				
+					<li><a class="include" href="RoraFilePermissionsChecks.html">RoraFilePermissionsChecks</a></li>
+				
+				
+				</ul>
+			</div>
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="./images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="./RoraFilePermissionsChecks.html">RoraFilePermissionsChecks</a></li>
+				
+					<li><a href="./RoraFileScanner.html">RoraFileScanner</a></li>
+				
+					<li><a href="./RoraListenerChecks.html">RoraListenerChecks</a></li>
+				
+					<li><a href="./RoraPatchLevelChecks.html">RoraPatchLevelChecks</a></li>
+				
+					<li><a href="./RoraReporter.html">RoraReporter</a></li>
+				
+					<li><a href="./RoraScanner.html">RoraScanner</a></li>
+				
+					<li><a href="./RoraSqlnetChecks.html">RoraSqlnetChecks</a></li>
+				
+					<li><a href="./RoraTnsnamesChecks.html">RoraTnsnamesChecks</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">RoraFileScanner</h1>
+
+		<div id="description">
+			<p>
+Copyright (C) 2011  Rory McCune
+</p>
+<h1>License</h1>
+<p>
+This program is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the Free
+Software Foundation; either version 2 of the License, or (at your option)
+any later version.
+</p>
+<p>
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+more details.
+</p>
+<p>
+You should have received a copy of the GNU General Public License along
+with this program; if not, write to the Free Software Foundation, Inc., 51
+Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+</p>
+<h1>Overview</h1>
+<p>
+This is the main class for the file based checks that <a
+href="RoraScanner.html">RoraScanner</a> can perform.  These are split into
+checks on the sqlnet and listener files (tnsnames checks TBA) and file
+permissions checks.  The file permissions checks are based on the output of
+&#8216;ls -al&#8217; for unix and dumpsec for windows , and basically just
+review for common permissions errors (eg, use of the everyone group for
+permissions in windows, and files not belonging to the oracle user in unix.
+</p>
+<p>
+If you&#8217;re looking to add checks to the modules, use the template
+below for which variables are needed.
+</p>
+<h1>Template Variables for Scan Modules</h1>
+<pre>
+ each module should be named &lt;descriptive&gt;_scan
+ and have the following variables set for reporting
+ * _source
+ * _description
+ * _sql
+ * _implications
+ * _banner
+ * _vuln_class
+ * _version
+ * _column_names
+ * _results</pre>
+
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(file,user,group)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Initialize the class, sets up the logging level and then calls the
+appropriate method based on the start of the file
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+     <span class="ruby-comment cmt"># File rora_file_scanner.rb, line 54</span>
+ 54:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">file</span>,<span class="ruby-identifier">user</span>,<span class="ruby-identifier">group</span>)
+ 55:     <span class="ruby-ivar">@completed_checks</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+ 56:     <span class="ruby-identifier">inputArray</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">readlines</span>(<span class="ruby-identifier">file</span>)
+ 57:     <span class="ruby-ivar">@config</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-value str">'scanner.conf'</span>,<span class="ruby-value str">'r'</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span> <span class="ruby-constant">YAML</span><span class="ruby-operator">::</span><span class="ruby-identifier">load</span>(<span class="ruby-identifier">file</span>)}
+ 58:     <span class="ruby-ivar">@scan_log</span> = <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@config</span>[<span class="ruby-value str">'RoraFileScanner'</span>][<span class="ruby-value str">'log_file'</span>])
+ 59:     
+ 60:     
+ 61:     <span class="ruby-keyword kw">case</span> <span class="ruby-ivar">@config</span>[<span class="ruby-value str">'RoraFileScanner'</span>][<span class="ruby-value str">'log_level'</span>]
+ 62:     <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;DEBUG&quot;</span>
+ 63:       <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">DEBUG</span>
+ 64:     <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;INFO&quot;</span>
+ 65:       <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">INFO</span>
+ 66:     <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;WARN&quot;</span>
+ 67:       <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">WARN</span>
+ 68:     <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;FATAL&quot;</span>
+ 69:       <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">FATAL</span>
+ 70:     <span class="ruby-keyword kw">else</span>
+ 71:       <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">DEBUG</span>
+ 72:       <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">warn</span>(<span class="ruby-value str">&quot;log level not set correctly using default level of DEBUG&quot;</span>)
+ 73:     <span class="ruby-keyword kw">end</span>
+ 74:     
+ 75:     <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">inputArray</span>[<span class="ruby-value">0</span>]
+ 76:     <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/DumpSec/</span>
+ 77:       <span class="ruby-identifier">parse_windows_rights</span>(<span class="ruby-identifier">inputArray</span>)
+ 78:       <span class="ruby-ivar">@title</span> = <span class="ruby-value str">'RoraFileScanner - Windows File Rights'</span>
+ 79:     <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/\.\:/</span>
+ 80:       <span class="ruby-identifier">parse_unix_rights</span>(<span class="ruby-identifier">inputArray</span>,<span class="ruby-identifier">user</span>,<span class="ruby-identifier">group</span>)
+ 81:       <span class="ruby-ivar">@title</span> = <span class="ruby-value str">'RoraFileScanner - Unix File Rights'</span>
+ 82:     <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/^total/</span>
+ 83:       <span class="ruby-identifier">parse_unix_rights</span>(<span class="ruby-identifier">inputArray</span>,<span class="ruby-identifier">user</span>,<span class="ruby-identifier">group</span>)
+ 84:       <span class="ruby-ivar">@title</span> = <span class="ruby-value str">'RoraFileScanner - Unix File Rights'</span>
+ 85:     <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/sqlnet\.ora/</span>
+ 86:       <span class="ruby-identifier">parse_sqlnet_file</span>(<span class="ruby-identifier">inputArray</span>)
+ 87:       <span class="ruby-ivar">@title</span> = <span class="ruby-value str">'RoraFileScanner - sqlnet.ora'</span>
+ 88:     <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/listener\.ora/</span>
+ 89:       <span class="ruby-identifier">parse_listener_file</span>(<span class="ruby-identifier">inputArray</span>)
+ 90:       <span class="ruby-ivar">@title</span> = <span class="ruby-value str">'RoraFileScanner - listener.ora'</span>
+ 91:     <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/tnsnames\.ora/</span>
+ 92:       <span class="ruby-identifier">parse_tnsname_file</span>(<span class="ruby-identifier">inputArray</span>)
+ 93:       <span class="ruby-ivar">@title</span> = <span class="ruby-value str">'RoraFileScanner - tnsnames.ora'</span>
+ 94:     <span class="ruby-keyword kw">else</span>
+ 95:       <span class="ruby-identifier">puts</span> <span class="ruby-value str">'Error: Unrecognized File format'</span>
+ 96:       <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">fatal</span>(<span class="ruby-value str">&quot;Unrecognized File format on input file&quot;</span>)
+ 97:       <span class="ruby-identifier">exit</span>
+ 98:     <span class="ruby-keyword kw">end</span>
+ 99:     
+100:     
+101:     
+102:   <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ENOENT</span>, <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EACCES</span>
+103:     <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">fatal</span>(<span class="ruby-value str">&quot;RoraScanner Error - &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">$!</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot; Ensure target file exists and you have rights to read it&quot;</span>)
+104:     <span class="ruby-identifier">puts</span> <span class="ruby-value str">'RoraFileScanner Error - '</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">$!</span>
+105:     <span class="ruby-identifier">puts</span> <span class="ruby-value str">'Ensure that the target file exists and you have rights to read it!'</span>
+106:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="parse-listener-file-method" class="method-detail ">
+				<a name="method-i-parse_listener_file"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">parse_listener_file</span><span
+						class="method-args">(inputArray)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Calls methods from rora_listener_checks if they are set in the config hash
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="parse-listener-file-source">
+<pre>
+     <span class="ruby-comment cmt"># File rora_file_scanner.rb, line 129</span>
+129:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parse_listener_file</span>(<span class="ruby-identifier">inputArray</span>)
+130: 
+131:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@config</span>[<span class="ruby-value str">'RoraFileScanner'</span>][<span class="ruby-value str">'ListenerChecks'</span>][<span class="ruby-value str">'listener_logging_check'</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;y&quot;</span>
+132:       <span class="ruby-identifier">listener_logging_check</span>(<span class="ruby-identifier">inputArray</span>)
+133:     <span class="ruby-keyword kw">end</span>
+134:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@config</span>[<span class="ruby-value str">'RoraFileScanner'</span>][<span class="ruby-value str">'ListenerChecks'</span>][<span class="ruby-value str">'listener_admin_restrictions_check'</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;y&quot;</span>
+135:       <span class="ruby-identifier">listener_admin_restrictions_check</span>(<span class="ruby-identifier">inputArray</span>)
+136:     <span class="ruby-keyword kw">end</span>
+137:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@config</span>[<span class="ruby-value str">'RoraFileScanner'</span>][<span class="ruby-value str">'ListenerChecks'</span>][<span class="ruby-value str">'listener_inbound_connect_timeout_check'</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;y&quot;</span>
+138:       <span class="ruby-identifier">listener_inbound_connect_timeout_check</span>(<span class="ruby-identifier">inputArray</span>)
+139:     <span class="ruby-keyword kw">end</span>
+140:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@config</span>[<span class="ruby-value str">'RoraFileScanner'</span>][<span class="ruby-value str">'ListenerChecks'</span>][<span class="ruby-value str">'listener_name_check'</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;y&quot;</span>
+141:       <span class="ruby-identifier">listener_name_check</span>(<span class="ruby-identifier">inputArray</span>)
+142:     <span class="ruby-keyword kw">end</span>
+143:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="parse-sqlnet-file-method" class="method-detail ">
+				<a name="method-i-parse_sqlnet_file"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">parse_sqlnet_file</span><span
+						class="method-args">(inputArray)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Calls methods from rora_sqlnet_checks if they are set in the config hash
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="parse-sqlnet-file-source">
+<pre>
+     <span class="ruby-comment cmt"># File rora_file_scanner.rb, line 110</span>
+110:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parse_sqlnet_file</span>(<span class="ruby-identifier">inputArray</span>)
+111:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@config</span>[<span class="ruby-value str">'RoraFileScanner'</span>][<span class="ruby-value str">'SqlnetChecks'</span>][<span class="ruby-value str">'sql_inbound_connection_timeout_check'</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;y&quot;</span>
+112:       <span class="ruby-identifier">sql_inbound_connection_timeout_check</span>(<span class="ruby-identifier">inputArray</span>)
+113:     <span class="ruby-keyword kw">end</span>
+114:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@config</span>[<span class="ruby-value str">'RoraFileScanner'</span>][<span class="ruby-value str">'SqlnetChecks'</span>][<span class="ruby-value str">'sql_valid_node_check'</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;y&quot;</span>
+115:       <span class="ruby-identifier">sql_valid_node_check</span>(<span class="ruby-identifier">inputArray</span>)
+116:     <span class="ruby-keyword kw">end</span>
+117:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@config</span>[<span class="ruby-value str">'RoraFileScanner'</span>][<span class="ruby-value str">'SqlnetChecks'</span>][<span class="ruby-value str">'sql_invited_node_check'</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;y&quot;</span>
+118:       <span class="ruby-identifier">sql_invited_node_check</span>(<span class="ruby-identifier">inputArray</span>)
+119:     <span class="ruby-keyword kw">end</span>
+120:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@config</span>[<span class="ruby-value str">'RoraFileScanner'</span>][<span class="ruby-value str">'SqlnetChecks'</span>][<span class="ruby-value str">'sql_excluded_node_check'</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;y&quot;</span>
+121:       <span class="ruby-identifier">sql_excluded_node_check</span>(<span class="ruby-identifier">inputArray</span>)
+122:     <span class="ruby-keyword kw">end</span>
+123:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@config</span>[<span class="ruby-value str">'RoraFileScanner'</span>][<span class="ruby-value str">'SqlnetChecks'</span>][<span class="ruby-value str">'sql_expire_time_check'</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;y&quot;</span>
+124:       <span class="ruby-identifier">sql_expire_time_check</span>(<span class="ruby-identifier">inputArray</span>)
+125:     <span class="ruby-keyword kw">end</span>
+126:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="parse-tnsnames-file-method" class="method-detail ">
+				<a name="method-i-parse_tnsnames_file"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">parse_tnsnames_file</span><span
+						class="method-args">(inputArray)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Calls methods from rora_sqlnet_checks if they are set in the config hash. 
+Currently unused.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="parse-tnsnames-file-source">
+<pre>
+     <span class="ruby-comment cmt"># File rora_file_scanner.rb, line 146</span>
+146:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parse_tnsnames_file</span>(<span class="ruby-identifier">inputArray</span>)
+147:     <span class="ruby-comment cmt">#Placeholder Currently no checks implemented for tnsnames.ora</span>
+148:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+
