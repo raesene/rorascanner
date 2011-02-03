@@ -37,6 +37,7 @@
 # * _results
 class RoraFileScanner
 
+  require 'rubygems'
   require 'require_all'
   require_relative 'rora_reporter'
   require 'logger'

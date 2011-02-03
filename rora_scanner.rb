@@ -36,6 +36,7 @@
 
 
 class RoraScanner
+require 'rubygems'
 #Need this for 1.8 compatibility
 require 'require_all'
 require 'oci8'
