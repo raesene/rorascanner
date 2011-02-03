@@ -21,7 +21,7 @@
 require 'rubygems'
 require 'require_all'
 require 'optparse'
-require_relative 'rora_file_scanner.rb'
+require_rel 'rora_file_scanner.rb'
 
 
 oracleFile = ""

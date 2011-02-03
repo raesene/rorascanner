@@ -20,7 +20,7 @@
 require 'rubygems'
 require 'require_all'
 require 'optparse'
-require_relative 'rora_scanner'
+require_rel 'rora_scanner'
 
 
 

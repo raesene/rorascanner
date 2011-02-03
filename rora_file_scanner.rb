@@ -39,12 +39,12 @@ class RoraFileScanner
 
   require 'rubygems'
   require 'require_all'
-  require_relative 'rora_reporter'
+  require_rel 'rora_reporter'
   require 'logger'
-  require_relative 'rora_sqlnet_checks'
-  require_relative 'rora_listener_checks'
-  require_relative 'rora_tnsnames_checks'
-  require_relative 'rora_file_permissions_checks'
+  require_rel 'rora_sqlnet_checks'
+  require_rel 'rora_listener_checks'
+  require_rel 'rora_tnsnames_checks'
+  require_rel 'rora_file_permissions_checks'
   
   include RoraReporter
   include RoraSqlnetChecks

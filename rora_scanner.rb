@@ -40,12 +40,12 @@ require 'rubygems'
 #Need this for 1.8 compatibility
 require 'require_all'
 require 'oci8'
-require_relative 'rora_reporter'
+require_rel 'rora_reporter'
 require 'logger'
 require 'digest/md5'
 require 'open-uri'
 require 'yaml'
-require_relative 'rora_patch_level_checks.rb'
+require_rel 'rora_patch_level_checks.rb'
 
 include RoraReporter
 include RoraPatchLevelChecks
