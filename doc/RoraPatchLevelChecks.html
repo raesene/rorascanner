@@ -121,7 +121,28 @@
 		<h1 class="module">RoraPatchLevelChecks</h1>
 
 		<div id="description">
-			<h1>Overview</h1>
+			<p>
+Copyright (C) 2011  Rory McCune
+</p>
+<h1>License</h1>
+<p>
+This program is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the Free
+Software Foundation; either version 2 of the License, or (at your option)
+any later version.
+</p>
+<p>
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+more details.
+</p>
+<p>
+You should have received a copy of the GNU General Public License along
+with this program; if not, write to the Free Software Foundation, Inc., 51
+Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+</p>
+<h1>Overview</h1>
 <p>
 This module adds checks for patch level and OS that the database is running
 on.  Currently the <a
@@ -171,29 +192,31 @@ installed.  Ideally this needs updated on a regular basis (quarterly).
 
 				<div class="method-description">
 					
-					
+					<p>
+A Method to return the OS that the database is running on (windows/unix)
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="detect-os-version-source">
 <pre>
-     <span class="ruby-comment cmt"># File rora_patch_level_checks.rb, line 93</span>
- 93: <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">detect_os_version</span>
- 94: <span class="ruby-comment cmt">#Work out what OS we are</span>
- 95: <span class="ruby-comment cmt">#At the moment this is a bit of a hack. The hack is that file names in Windows based OS's start with an Alpha character and in Unix statr with a /</span>
- 96:   <span class="ruby-ivar">@conn</span>.<span class="ruby-identifier">exec</span>(<span class="ruby-value str">'select FILE_NAME from DBA_DATA_FILES'</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span>
- 97:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^[a-zA-Z]/</span>
- 98:       <span class="ruby-ivar">@db_os</span> = <span class="ruby-value str">'Windows'</span>
- 99:     <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^\//</span>
-100:       <span class="ruby-ivar">@db_os</span> = <span class="ruby-value str">'Unix'</span>
-101:     <span class="ruby-keyword kw">else</span>
-102:       <span class="ruby-ivar">@scan_log</span>.<span class="ruby-constant">WARN</span>(<span class="ruby-value str">&quot;unable to determine OS&quot;</span>)
-103:       <span class="ruby-comment cmt">#TODO: move this to a thrown error to be caught elsewhere for now default to unix</span>
-104:       <span class="ruby-ivar">@db_os</span> = <span class="ruby-value str">'Unix'</span>
-105:     <span class="ruby-keyword kw">end</span>
-106:   <span class="ruby-keyword kw">end</span>
-107: <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File rora_patch_level_checks.rb, line 116</span>
+116: <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">detect_os_version</span>
+117: <span class="ruby-comment cmt">#Work out what OS we are</span>
+118: <span class="ruby-comment cmt">#At the moment this is a bit of a hack. The hack is that file names in Windows based OS's start with an Alpha character and in Unix statr with a /</span>
+119:   <span class="ruby-ivar">@conn</span>.<span class="ruby-identifier">exec</span>(<span class="ruby-value str">'select FILE_NAME from DBA_DATA_FILES'</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span>
+120:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^[a-zA-Z]/</span>
+121:       <span class="ruby-ivar">@db_os</span> = <span class="ruby-value str">'Windows'</span>
+122:     <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">r</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^\//</span>
+123:       <span class="ruby-ivar">@db_os</span> = <span class="ruby-value str">'Unix'</span>
+124:     <span class="ruby-keyword kw">else</span>
+125:       <span class="ruby-ivar">@scan_log</span>.<span class="ruby-constant">WARN</span>(<span class="ruby-value str">&quot;unable to determine OS&quot;</span>)
+126:       <span class="ruby-comment cmt">#TODO: move this to a thrown error to be caught elsewhere for now default to unix</span>
+127:       <span class="ruby-ivar">@db_os</span> = <span class="ruby-value str">'Unix'</span>
+128:     <span class="ruby-keyword kw">end</span>
+129:   <span class="ruby-keyword kw">end</span>
+130: <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -217,65 +240,36 @@ installed.  Ideally this needs updated on a regular basis (quarterly).
 
 				<div class="method-description">
 					
-					
+					<p>
+This check reviews the dba_registry_history view to return the latest CPU
+installed
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="patch-level-scan-source">
 <pre>
-    <span class="ruby-comment cmt"># File rora_patch_level_checks.rb, line 41</span>
-41: <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">patch_level_scan</span>
-42:   <span class="ruby-comment cmt">#This only works with version 10.2.0.1 at the moment on Linux x86 and Windows...</span>
-43:   <span class="ruby-identifier">detect_os_version</span>
-44:   <span class="ruby-ivar">@patch_level_scan_source</span> = <span class="ruby-value str">'bespoke'</span>
-45:   <span class="ruby-ivar">@patch_level_scan_id</span> = <span class="ruby-value str">&quot;RS0011&quot;</span>
-46:   <span class="ruby-ivar">@patch_level_scan_description</span> = <span class="ruby-value str">&quot;Oracle release quarterly seurity updates for their Database products, it's important to ensure these updates are applied&quot;</span>
-47:   <span class="ruby-ivar">@patch_level_scan_sql</span> = <span class="ruby-value str">&quot;&quot;</span>
-48:   <span class="ruby-ivar">@patch_level_scan_implications</span> = <span class="ruby-value str">&quot;If critical patch updates are not applied the database is likely to have exploitable security vulnerabilities&quot;</span> 
-49:   <span class="ruby-ivar">@patch_level_scan_banner</span> = <span class="ruby-value str">&quot;CPU checking&quot;</span>
-50:   <span class="ruby-ivar">@patch_level_scan_vuln_class</span> = <span class="ruby-value str">&quot;Patching&quot;</span>
-51:   <span class="ruby-ivar">@patch_level_scan_version</span> = <span class="ruby-value str">&quot;10.2.0.1.0&quot;</span>
-52:   <span class="ruby-ivar">@patch_level_scan_column_names</span> = [<span class="ruby-value str">'patch_level'</span> ,<span class="ruby-value str">'installed?'</span>]
-53:   <span class="ruby-ivar">@patch_level_scan_results</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
-54:   
-55:   <span class="ruby-comment cmt">#Stop patch scan running with older versions as it won't work</span>
-56:   <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@version</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^9|8|7/</span>
-57:     <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">warn</span>(<span class="ruby-value str">&quot;tried patch level scan with version 9 or earlier database won't work!&quot;</span>)
-58:     <span class="ruby-keyword kw">return</span>
-59:   <span class="ruby-keyword kw">end</span>
-60:   
-61:   <span class="ruby-comment cmt">#Need to work out what OS we're running on.</span>
-62:   <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@db_os</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'Windows'</span>
-63:     <span class="ruby-identifier">changed_hash</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
-64:     <span class="ruby-identifier">changed_hash</span>[<span class="ruby-value str">'jan06'</span>] = [<span class="ruby-value str">'OWA_OPT_LOCK'</span>, <span class="ruby-value str">'SYS'</span>, <span class="ruby-value str">'cb965c814e58518c01797cd5fa06f73b'</span>]
-65:     <span class="ruby-identifier">changed_hash</span>[<span class="ruby-value str">'apr06'</span>] = [<span class="ruby-value str">'DBMS_REGISTRY_SYS'</span>, <span class="ruby-value str">'SYS'</span>, <span class="ruby-value str">'4e73794e5557fb7964e55bc59ca9d34e'</span>]
-66:     <span class="ruby-identifier">changed_hash</span>[<span class="ruby-value str">'jul06'</span>] = [<span class="ruby-value str">'DBMS_METADATA'</span>, <span class="ruby-value str">'SYS'</span>, <span class="ruby-value str">'56e718c65584449575f547f4afed6578'</span>]
-67:     <span class="ruby-identifier">changed_hash</span>[<span class="ruby-value str">'oct06'</span>] = [<span class="ruby-value str">'DBMS_CDC_IMPDP'</span>, <span class="ruby-value str">'SYS'</span>, <span class="ruby-value str">'ddab7de3352f37c7cad4001e22234d19'</span>]
-68:   <span class="ruby-keyword kw">elsif</span> <span class="ruby-ivar">@db_os</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'Unix'</span>
-69:     <span class="ruby-identifier">changed_hash</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
-70:     <span class="ruby-identifier">changed_hash</span>[<span class="ruby-value str">'jan06'</span>] = [<span class="ruby-value str">'OWA_OPT_LOCK'</span>, <span class="ruby-value str">'SYS'</span>, <span class="ruby-value str">'cb965c814e58518c01797cd5fa06f73b'</span>]
-71:     <span class="ruby-identifier">changed_hash</span>[<span class="ruby-value str">'apr06'</span>] = [<span class="ruby-value str">'DBMS_REGISTRY_SYS'</span>, <span class="ruby-value str">'SYS'</span>, <span class="ruby-value str">'dda8a5bebf3615ecb0f200aedc061f78'</span>]
-72:     <span class="ruby-identifier">changed_hash</span>[<span class="ruby-value str">'jul06'</span>] = [<span class="ruby-value str">'DBMS_METADATA'</span>, <span class="ruby-value str">'SYS'</span>, <span class="ruby-value str">'1d90513fdfcc9c085534b6f7d0f21060'</span>]
-73:     <span class="ruby-identifier">changed_hash</span>[<span class="ruby-value str">'oct06'</span>] = [<span class="ruby-value str">'DBMS_CDC_IMPDP'</span>, <span class="ruby-value str">'SYS'</span>, <span class="ruby-value str">'ddab7de3352f37c7cad4001e22234d19'</span>]
-74:   <span class="ruby-keyword kw">else</span>
-75:     <span class="ruby-ivar">@scan_log</span>.<span class="ruby-constant">WARN</span>(<span class="ruby-value str">&quot;Unable to carry out patch level check as OS can't be determined&quot;</span>)
-76:     <span class="ruby-keyword kw">return</span>
-77:   <span class="ruby-keyword kw">end</span>
-78:   
-79:   <span class="ruby-identifier">changed_hash</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>,<span class="ruby-identifier">value</span><span class="ruby-operator">|</span>            
-80:     <span class="ruby-identifier">statement</span> = <span class="ruby-node">&quot;select DBMS_METADATA.GET_DDL('PACKAGE','#{value[0]}','#{value[1]}') from DUAL&quot;</span>
-81:     <span class="ruby-ivar">@conn</span>.<span class="ruby-identifier">exec</span>(<span class="ruby-identifier">statement</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span>
-82:       <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Digest</span><span class="ruby-operator">::</span><span class="ruby-constant">MD5</span>.<span class="ruby-identifier">hexdigest</span>(<span class="ruby-identifier">r</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">read</span>) <span class="ruby-operator">==</span> <span class="ruby-identifier">value</span>[<span class="ruby-value">2</span>]
-83:         <span class="ruby-ivar">@patch_level_scan_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">key</span>, <span class="ruby-value str">'Yes'</span>]
-84:       <span class="ruby-keyword kw">else</span>
-85:         <span class="ruby-ivar">@patch_level_scan_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">key</span>, <span class="ruby-value str">'No'</span>]
-86:       <span class="ruby-keyword kw">end</span> 
-87:     <span class="ruby-keyword kw">end</span>
-88:   <span class="ruby-keyword kw">end</span>
-89:   <span class="ruby-ivar">@completed_checks</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'patch_level_scan'</span>
-90:   
-91: <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File rora_patch_level_checks.rb, line 95</span>
+ 95: <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">patch_level_scan</span>
+ 96:   <span class="ruby-ivar">@patch_level_scan_source</span> = <span class="ruby-value str">'bespoke'</span>
+ 97:   <span class="ruby-ivar">@patch_level_scan_id</span> = <span class="ruby-value str">&quot;RS0011&quot;</span>
+ 98:   <span class="ruby-ivar">@patch_level_scan_description</span> = <span class="ruby-value str">&quot;Oracle release quarterly security updates for their Database products, it's important to ensure these updates are applied&quot;</span>
+ 99:   <span class="ruby-ivar">@patch_level_scan_sql</span> = <span class="ruby-value str">&quot;select version,comments from dba_registry_history&quot;</span>
+100:   <span class="ruby-ivar">@patch_level_scan_implications</span> = <span class="ruby-value str">&quot;If critical patch updates are not applied the database is likely to have exploitable security vulnerabilities&quot;</span>
+101:   <span class="ruby-ivar">@patch_level_scan_banner</span> = <span class="ruby-value str">&quot;CPU checking&quot;</span>
+102:   <span class="ruby-ivar">@patch_level_scan_vuln_class</span> = <span class="ruby-value str">&quot;Patching&quot;</span>
+103:   <span class="ruby-ivar">@patch_level_scan_version</span> = <span class="ruby-value str">&quot;10.2.0.1.0&quot;</span>
+104:   <span class="ruby-ivar">@patch_level_scan_column_names</span> = [<span class="ruby-value str">'database_version'</span> ,<span class="ruby-value str">'installed_CPU'</span>]
+105:   <span class="ruby-ivar">@patch_level_scan_results</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+106: 
+107:   <span class="ruby-ivar">@conn</span>.<span class="ruby-identifier">exec</span>(<span class="ruby-ivar">@patch_level_scan_sql</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span>
+108:     <span class="ruby-ivar">@patch_level_scan_results</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">r</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">r</span>[<span class="ruby-value">1</span>]]
+109:   <span class="ruby-keyword kw">end</span>
+110:   <span class="ruby-ivar">@completed_checks</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'patch_level_scan'</span>
+111: 
+112: 
+113: <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>

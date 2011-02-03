@@ -24,7 +24,7 @@
 	<div id="metadata">
 		<dl>
 			<dt class="modified-date">Last Modified</dt>
-			<dd class="modified-date">2011-01-31 20:33:07 +0000</dd>
+			<dd class="modified-date">2011-02-03 14:00:59 +0000</dd>
 
 			
 			<dt class="requires">Requires</dt>
@@ -64,6 +64,27 @@ You should have received a copy of the GNU General Public License along
 with this program; if not, write to the Free Software Foundation, Inc., 51
 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 </p>
+<h1>Overview</h1>
+<p>
+This module adds checks for patch level and OS that the database is running
+on.  Currently the patch_level_scan check is at alpha level with a couple
+of instances enabled.  It essentially looks at the md5 of packages which
+incdicate that a particular CPU has been installed.  Ideally this needs
+updated on a regular basis (quarterly).
+</p>
+<h1>Template Variables for Scan Modules</h1>
+<pre>
+ each module should be named &lt;descriptive&gt;_scan
+ and have the following variables set for reporting
+  _source
+ _description
+ _sql
+ _implications
+ _banner
+ _vuln_class
+ _version
+ _column_names
+ _results</pre>
 
 		</div>
 		

@@ -245,60 +245,60 @@ appropriate method based on the start of the file
 					<div class="method-source-code"
 						id="new-source">
 <pre>
-     <span class="ruby-comment cmt"># File rora_file_scanner.rb, line 54</span>
- 54:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">file</span>,<span class="ruby-identifier">user</span>,<span class="ruby-identifier">group</span>)
- 55:     <span class="ruby-ivar">@completed_checks</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
- 56:     <span class="ruby-identifier">inputArray</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">readlines</span>(<span class="ruby-identifier">file</span>)
- 57:     <span class="ruby-ivar">@config</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-value str">'scanner.conf'</span>,<span class="ruby-value str">'r'</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span> <span class="ruby-constant">YAML</span><span class="ruby-operator">::</span><span class="ruby-identifier">load</span>(<span class="ruby-identifier">file</span>)}
- 58:     <span class="ruby-ivar">@scan_log</span> = <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@config</span>[<span class="ruby-value str">'RoraFileScanner'</span>][<span class="ruby-value str">'log_file'</span>])
- 59:     
+     <span class="ruby-comment cmt"># File rora_file_scanner.rb, line 55</span>
+ 55:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">file</span>,<span class="ruby-identifier">user</span>,<span class="ruby-identifier">group</span>)
+ 56:     <span class="ruby-ivar">@completed_checks</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+ 57:     <span class="ruby-identifier">inputArray</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">readlines</span>(<span class="ruby-identifier">file</span>)
+ 58:     <span class="ruby-ivar">@config</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-value str">'scanner.conf'</span>,<span class="ruby-value str">'r'</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span> <span class="ruby-constant">YAML</span><span class="ruby-operator">::</span><span class="ruby-identifier">load</span>(<span class="ruby-identifier">file</span>)}
+ 59:     <span class="ruby-ivar">@scan_log</span> = <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@config</span>[<span class="ruby-value str">'RoraFileScanner'</span>][<span class="ruby-value str">'log_file'</span>])
  60:     
- 61:     <span class="ruby-keyword kw">case</span> <span class="ruby-ivar">@config</span>[<span class="ruby-value str">'RoraFileScanner'</span>][<span class="ruby-value str">'log_level'</span>]
- 62:     <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;DEBUG&quot;</span>
- 63:       <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">DEBUG</span>
- 64:     <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;INFO&quot;</span>
- 65:       <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">INFO</span>
- 66:     <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;WARN&quot;</span>
- 67:       <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">WARN</span>
- 68:     <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;FATAL&quot;</span>
- 69:       <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">FATAL</span>
- 70:     <span class="ruby-keyword kw">else</span>
- 71:       <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">DEBUG</span>
- 72:       <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">warn</span>(<span class="ruby-value str">&quot;log level not set correctly using default level of DEBUG&quot;</span>)
- 73:     <span class="ruby-keyword kw">end</span>
- 74:     
- 75:     <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">inputArray</span>[<span class="ruby-value">0</span>]
- 76:     <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/DumpSec/</span>
- 77:       <span class="ruby-identifier">parse_windows_rights</span>(<span class="ruby-identifier">inputArray</span>)
- 78:       <span class="ruby-ivar">@title</span> = <span class="ruby-value str">'RoraFileScanner - Windows File Rights'</span>
- 79:     <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/\.\:/</span>
- 80:       <span class="ruby-identifier">parse_unix_rights</span>(<span class="ruby-identifier">inputArray</span>,<span class="ruby-identifier">user</span>,<span class="ruby-identifier">group</span>)
- 81:       <span class="ruby-ivar">@title</span> = <span class="ruby-value str">'RoraFileScanner - Unix File Rights'</span>
- 82:     <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/^total/</span>
- 83:       <span class="ruby-identifier">parse_unix_rights</span>(<span class="ruby-identifier">inputArray</span>,<span class="ruby-identifier">user</span>,<span class="ruby-identifier">group</span>)
- 84:       <span class="ruby-ivar">@title</span> = <span class="ruby-value str">'RoraFileScanner - Unix File Rights'</span>
- 85:     <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/sqlnet\.ora/</span>
- 86:       <span class="ruby-identifier">parse_sqlnet_file</span>(<span class="ruby-identifier">inputArray</span>)
- 87:       <span class="ruby-ivar">@title</span> = <span class="ruby-value str">'RoraFileScanner - sqlnet.ora'</span>
- 88:     <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/listener\.ora/</span>
- 89:       <span class="ruby-identifier">parse_listener_file</span>(<span class="ruby-identifier">inputArray</span>)
- 90:       <span class="ruby-ivar">@title</span> = <span class="ruby-value str">'RoraFileScanner - listener.ora'</span>
- 91:     <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/tnsnames\.ora/</span>
- 92:       <span class="ruby-identifier">parse_tnsname_file</span>(<span class="ruby-identifier">inputArray</span>)
- 93:       <span class="ruby-ivar">@title</span> = <span class="ruby-value str">'RoraFileScanner - tnsnames.ora'</span>
- 94:     <span class="ruby-keyword kw">else</span>
- 95:       <span class="ruby-identifier">puts</span> <span class="ruby-value str">'Error: Unrecognized File format'</span>
- 96:       <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">fatal</span>(<span class="ruby-value str">&quot;Unrecognized File format on input file&quot;</span>)
- 97:       <span class="ruby-identifier">exit</span>
- 98:     <span class="ruby-keyword kw">end</span>
- 99:     
+ 61:     
+ 62:     <span class="ruby-keyword kw">case</span> <span class="ruby-ivar">@config</span>[<span class="ruby-value str">'RoraFileScanner'</span>][<span class="ruby-value str">'log_level'</span>]
+ 63:     <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;DEBUG&quot;</span>
+ 64:       <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">DEBUG</span>
+ 65:     <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;INFO&quot;</span>
+ 66:       <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">INFO</span>
+ 67:     <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;WARN&quot;</span>
+ 68:       <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">WARN</span>
+ 69:     <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;FATAL&quot;</span>
+ 70:       <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">FATAL</span>
+ 71:     <span class="ruby-keyword kw">else</span>
+ 72:       <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">DEBUG</span>
+ 73:       <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">warn</span>(<span class="ruby-value str">&quot;log level not set correctly using default level of DEBUG&quot;</span>)
+ 74:     <span class="ruby-keyword kw">end</span>
+ 75:     
+ 76:     <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">inputArray</span>[<span class="ruby-value">0</span>]
+ 77:     <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/DumpSec/</span>
+ 78:       <span class="ruby-identifier">parse_windows_rights</span>(<span class="ruby-identifier">inputArray</span>)
+ 79:       <span class="ruby-ivar">@title</span> = <span class="ruby-value str">'RoraFileScanner - Windows File Rights'</span>
+ 80:     <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/\.\:/</span>
+ 81:       <span class="ruby-identifier">parse_unix_rights</span>(<span class="ruby-identifier">inputArray</span>,<span class="ruby-identifier">user</span>,<span class="ruby-identifier">group</span>)
+ 82:       <span class="ruby-ivar">@title</span> = <span class="ruby-value str">'RoraFileScanner - Unix File Rights'</span>
+ 83:     <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/^total/</span>
+ 84:       <span class="ruby-identifier">parse_unix_rights</span>(<span class="ruby-identifier">inputArray</span>,<span class="ruby-identifier">user</span>,<span class="ruby-identifier">group</span>)
+ 85:       <span class="ruby-ivar">@title</span> = <span class="ruby-value str">'RoraFileScanner - Unix File Rights'</span>
+ 86:     <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/sqlnet\.ora/</span>
+ 87:       <span class="ruby-identifier">parse_sqlnet_file</span>(<span class="ruby-identifier">inputArray</span>)
+ 88:       <span class="ruby-ivar">@title</span> = <span class="ruby-value str">'RoraFileScanner - sqlnet.ora'</span>
+ 89:     <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/listener\.ora/</span>
+ 90:       <span class="ruby-identifier">parse_listener_file</span>(<span class="ruby-identifier">inputArray</span>)
+ 91:       <span class="ruby-ivar">@title</span> = <span class="ruby-value str">'RoraFileScanner - listener.ora'</span>
+ 92:     <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/tnsnames\.ora/</span>
+ 93:       <span class="ruby-identifier">parse_tnsname_file</span>(<span class="ruby-identifier">inputArray</span>)
+ 94:       <span class="ruby-ivar">@title</span> = <span class="ruby-value str">'RoraFileScanner - tnsnames.ora'</span>
+ 95:     <span class="ruby-keyword kw">else</span>
+ 96:       <span class="ruby-identifier">puts</span> <span class="ruby-value str">'Error: Unrecognized File format'</span>
+ 97:       <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">fatal</span>(<span class="ruby-value str">&quot;Unrecognized File format on input file&quot;</span>)
+ 98:       <span class="ruby-identifier">exit</span>
+ 99:     <span class="ruby-keyword kw">end</span>
 100:     
 101:     
-102:   <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ENOENT</span>, <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EACCES</span>
-103:     <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">fatal</span>(<span class="ruby-value str">&quot;RoraScanner Error - &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">$!</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot; Ensure target file exists and you have rights to read it&quot;</span>)
-104:     <span class="ruby-identifier">puts</span> <span class="ruby-value str">'RoraFileScanner Error - '</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">$!</span>
-105:     <span class="ruby-identifier">puts</span> <span class="ruby-value str">'Ensure that the target file exists and you have rights to read it!'</span>
-106:   <span class="ruby-keyword kw">end</span></pre>
+102:     
+103:   <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ENOENT</span>, <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EACCES</span>
+104:     <span class="ruby-ivar">@scan_log</span>.<span class="ruby-identifier">fatal</span>(<span class="ruby-value str">&quot;RoraScanner Error - &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">$!</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot; Ensure target file exists and you have rights to read it&quot;</span>)
+105:     <span class="ruby-identifier">puts</span> <span class="ruby-value str">'RoraFileScanner Error - '</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">$!</span>
+106:     <span class="ruby-identifier">puts</span> <span class="ruby-value str">'Ensure that the target file exists and you have rights to read it!'</span>
+107:   <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -337,22 +337,22 @@ Calls methods from rora_listener_checks if they are set in the config hash
 					<div class="method-source-code"
 						id="parse-listener-file-source">
 <pre>
-     <span class="ruby-comment cmt"># File rora_file_scanner.rb, line 129</span>
-129:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parse_listener_file</span>(<span class="ruby-identifier">inputArray</span>)
-130: 
-131:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@config</span>[<span class="ruby-value str">'RoraFileScanner'</span>][<span class="ruby-value str">'ListenerChecks'</span>][<span class="ruby-value str">'listener_logging_check'</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;y&quot;</span>
-132:       <span class="ruby-identifier">listener_logging_check</span>(<span class="ruby-identifier">inputArray</span>)
-133:     <span class="ruby-keyword kw">end</span>
-134:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@config</span>[<span class="ruby-value str">'RoraFileScanner'</span>][<span class="ruby-value str">'ListenerChecks'</span>][<span class="ruby-value str">'listener_admin_restrictions_check'</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;y&quot;</span>
-135:       <span class="ruby-identifier">listener_admin_restrictions_check</span>(<span class="ruby-identifier">inputArray</span>)
-136:     <span class="ruby-keyword kw">end</span>
-137:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@config</span>[<span class="ruby-value str">'RoraFileScanner'</span>][<span class="ruby-value str">'ListenerChecks'</span>][<span class="ruby-value str">'listener_inbound_connect_timeout_check'</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;y&quot;</span>
-138:       <span class="ruby-identifier">listener_inbound_connect_timeout_check</span>(<span class="ruby-identifier">inputArray</span>)
-139:     <span class="ruby-keyword kw">end</span>
-140:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@config</span>[<span class="ruby-value str">'RoraFileScanner'</span>][<span class="ruby-value str">'ListenerChecks'</span>][<span class="ruby-value str">'listener_name_check'</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;y&quot;</span>
-141:       <span class="ruby-identifier">listener_name_check</span>(<span class="ruby-identifier">inputArray</span>)
-142:     <span class="ruby-keyword kw">end</span>
-143:   <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File rora_file_scanner.rb, line 130</span>
+130:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parse_listener_file</span>(<span class="ruby-identifier">inputArray</span>)
+131: 
+132:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@config</span>[<span class="ruby-value str">'RoraFileScanner'</span>][<span class="ruby-value str">'ListenerChecks'</span>][<span class="ruby-value str">'listener_logging_check'</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;y&quot;</span>
+133:       <span class="ruby-identifier">listener_logging_check</span>(<span class="ruby-identifier">inputArray</span>)
+134:     <span class="ruby-keyword kw">end</span>
+135:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@config</span>[<span class="ruby-value str">'RoraFileScanner'</span>][<span class="ruby-value str">'ListenerChecks'</span>][<span class="ruby-value str">'listener_admin_restrictions_check'</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;y&quot;</span>
+136:       <span class="ruby-identifier">listener_admin_restrictions_check</span>(<span class="ruby-identifier">inputArray</span>)
+137:     <span class="ruby-keyword kw">end</span>
+138:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@config</span>[<span class="ruby-value str">'RoraFileScanner'</span>][<span class="ruby-value str">'ListenerChecks'</span>][<span class="ruby-value str">'listener_inbound_connect_timeout_check'</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;y&quot;</span>
+139:       <span class="ruby-identifier">listener_inbound_connect_timeout_check</span>(<span class="ruby-identifier">inputArray</span>)
+140:     <span class="ruby-keyword kw">end</span>
+141:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@config</span>[<span class="ruby-value str">'RoraFileScanner'</span>][<span class="ruby-value str">'ListenerChecks'</span>][<span class="ruby-value str">'listener_name_check'</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;y&quot;</span>
+142:       <span class="ruby-identifier">listener_name_check</span>(<span class="ruby-identifier">inputArray</span>)
+143:     <span class="ruby-keyword kw">end</span>
+144:   <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -385,24 +385,24 @@ Calls methods from rora_sqlnet_checks if they are set in the config hash
 					<div class="method-source-code"
 						id="parse-sqlnet-file-source">
 <pre>
-     <span class="ruby-comment cmt"># File rora_file_scanner.rb, line 110</span>
-110:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parse_sqlnet_file</span>(<span class="ruby-identifier">inputArray</span>)
-111:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@config</span>[<span class="ruby-value str">'RoraFileScanner'</span>][<span class="ruby-value str">'SqlnetChecks'</span>][<span class="ruby-value str">'sql_inbound_connection_timeout_check'</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;y&quot;</span>
-112:       <span class="ruby-identifier">sql_inbound_connection_timeout_check</span>(<span class="ruby-identifier">inputArray</span>)
-113:     <span class="ruby-keyword kw">end</span>
-114:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@config</span>[<span class="ruby-value str">'RoraFileScanner'</span>][<span class="ruby-value str">'SqlnetChecks'</span>][<span class="ruby-value str">'sql_valid_node_check'</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;y&quot;</span>
-115:       <span class="ruby-identifier">sql_valid_node_check</span>(<span class="ruby-identifier">inputArray</span>)
-116:     <span class="ruby-keyword kw">end</span>
-117:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@config</span>[<span class="ruby-value str">'RoraFileScanner'</span>][<span class="ruby-value str">'SqlnetChecks'</span>][<span class="ruby-value str">'sql_invited_node_check'</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;y&quot;</span>
-118:       <span class="ruby-identifier">sql_invited_node_check</span>(<span class="ruby-identifier">inputArray</span>)
-119:     <span class="ruby-keyword kw">end</span>
-120:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@config</span>[<span class="ruby-value str">'RoraFileScanner'</span>][<span class="ruby-value str">'SqlnetChecks'</span>][<span class="ruby-value str">'sql_excluded_node_check'</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;y&quot;</span>
-121:       <span class="ruby-identifier">sql_excluded_node_check</span>(<span class="ruby-identifier">inputArray</span>)
-122:     <span class="ruby-keyword kw">end</span>
-123:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@config</span>[<span class="ruby-value str">'RoraFileScanner'</span>][<span class="ruby-value str">'SqlnetChecks'</span>][<span class="ruby-value str">'sql_expire_time_check'</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;y&quot;</span>
-124:       <span class="ruby-identifier">sql_expire_time_check</span>(<span class="ruby-identifier">inputArray</span>)
-125:     <span class="ruby-keyword kw">end</span>
-126:   <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File rora_file_scanner.rb, line 111</span>
+111:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parse_sqlnet_file</span>(<span class="ruby-identifier">inputArray</span>)
+112:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@config</span>[<span class="ruby-value str">'RoraFileScanner'</span>][<span class="ruby-value str">'SqlnetChecks'</span>][<span class="ruby-value str">'sql_inbound_connection_timeout_check'</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;y&quot;</span>
+113:       <span class="ruby-identifier">sql_inbound_connection_timeout_check</span>(<span class="ruby-identifier">inputArray</span>)
+114:     <span class="ruby-keyword kw">end</span>
+115:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@config</span>[<span class="ruby-value str">'RoraFileScanner'</span>][<span class="ruby-value str">'SqlnetChecks'</span>][<span class="ruby-value str">'sql_valid_node_check'</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;y&quot;</span>
+116:       <span class="ruby-identifier">sql_valid_node_check</span>(<span class="ruby-identifier">inputArray</span>)
+117:     <span class="ruby-keyword kw">end</span>
+118:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@config</span>[<span class="ruby-value str">'RoraFileScanner'</span>][<span class="ruby-value str">'SqlnetChecks'</span>][<span class="ruby-value str">'sql_invited_node_check'</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;y&quot;</span>
+119:       <span class="ruby-identifier">sql_invited_node_check</span>(<span class="ruby-identifier">inputArray</span>)
+120:     <span class="ruby-keyword kw">end</span>
+121:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@config</span>[<span class="ruby-value str">'RoraFileScanner'</span>][<span class="ruby-value str">'SqlnetChecks'</span>][<span class="ruby-value str">'sql_excluded_node_check'</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;y&quot;</span>
+122:       <span class="ruby-identifier">sql_excluded_node_check</span>(<span class="ruby-identifier">inputArray</span>)
+123:     <span class="ruby-keyword kw">end</span>
+124:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@config</span>[<span class="ruby-value str">'RoraFileScanner'</span>][<span class="ruby-value str">'SqlnetChecks'</span>][<span class="ruby-value str">'sql_expire_time_check'</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;y&quot;</span>
+125:       <span class="ruby-identifier">sql_expire_time_check</span>(<span class="ruby-identifier">inputArray</span>)
+126:     <span class="ruby-keyword kw">end</span>
+127:   <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -436,10 +436,10 @@ Currently unused.
 					<div class="method-source-code"
 						id="parse-tnsnames-file-source">
 <pre>
-     <span class="ruby-comment cmt"># File rora_file_scanner.rb, line 146</span>
-146:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parse_tnsnames_file</span>(<span class="ruby-identifier">inputArray</span>)
-147:     <span class="ruby-comment cmt">#Placeholder Currently no checks implemented for tnsnames.ora</span>
-148:   <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File rora_file_scanner.rb, line 147</span>
+147:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parse_tnsnames_file</span>(<span class="ruby-identifier">inputArray</span>)
+148:     <span class="ruby-comment cmt">#Placeholder Currently no checks implemented for tnsnames.ora</span>
+149:   <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>

@@ -37,6 +37,7 @@
 # * _results
 class RoraFileScanner
 
+  require 'require_all'
   require_relative 'rora_reporter'
   require 'logger'
   require_relative 'rora_sqlnet_checks'

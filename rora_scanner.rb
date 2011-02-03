@@ -36,7 +36,8 @@
 
 
 class RoraScanner
-
+#Need this for 1.8 compatibility
+require 'require_all'
 require 'oci8'
 require_relative 'rora_reporter'
 require 'logger'

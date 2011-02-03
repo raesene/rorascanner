@@ -245,7 +245,7 @@ Creates an HTML report
  30: <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">create_html_report</span>(<span class="ruby-identifier">server</span>,<span class="ruby-identifier">checkType</span>)
  31:   <span class="ruby-identifier">require</span> <span class="ruby-value str">'builder'</span>
  32:   <span class="ruby-identifier">require</span> <span class="ruby-value str">'ruport'</span>
- 33:   <span class="ruby-identifier">require</span> <span class="ruby-value str">'ruport/util'</span>
+ 33:   
  34:   <span class="ruby-identifier">filename</span> = <span class="ruby-identifier">server</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp re">/\//</span>,<span class="ruby-value str">'-'</span>) <span class="ruby-operator">+</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">gmtime</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/\W/</span>,<span class="ruby-value str">''</span>) <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;.html&quot;</span>
  35:   <span class="ruby-identifier">report</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-value str">&quot;w+&quot;</span>)
  36:   
