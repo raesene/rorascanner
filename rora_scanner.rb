@@ -36,19 +36,28 @@
 
 
 class RoraScanner
-require 'rubygems'
-#Need this for 1.8 compatibility
-require 'require_all'
-require 'oci8'
-require_rel 'rora_reporter'
-require 'logger'
-require 'digest/md5'
-require 'open-uri'
-require 'yaml'
-require_rel 'rora_patch_level_checks.rb'
 
-include RoraReporter
-include RoraPatchLevelChecks
+  begin
+    require 'rubygems'
+    #Need this for 1.8 compatibility
+    require 'require_all'
+    require 'oci8'
+    require_rel 'rora_reporter'
+    require 'logger'
+    require 'digest/md5'
+    require 'open-uri'
+    require 'yaml'
+    require_rel 'rora_patch_level_checks.rb'
+  rescue LoadError => e
+    puts "Couldn't find some of the required gem.  Most likely problems are oci8 and require_all"
+    puts "For oci8 check the website for the installation process, for require_all just install the gem"
+    puts e.to_s
+    exit
+  end
+
+
+  include RoraReporter
+  include RoraPatchLevelChecks
   
   attr_reader :config
 

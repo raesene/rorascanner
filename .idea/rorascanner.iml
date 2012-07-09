@@ -4,7 +4,6 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="[gem] require_all (v1.2.0, /home/rorym/.rvm/gems/ruby-1.9.2-p0/gems/require_all-1.2.0)" level="application" />
   </component>
 </module>
 
